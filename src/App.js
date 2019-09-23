@@ -1,16 +1,15 @@
 import React from "react";
 import "./App.css";
 
-import LoginForm from './components/LoginForm';
-import SigninForm from './components/SigninForm'
+import SignUpForm from "./components/SignUp/SignUp";
+import SigninForm from './components/Signin/SigninForm'
 
 function App() {
   return (
     <div className="App">
       <h1>Safe Routes</h1>
-
-			{/* <LoginForm/> */}
-      <SigninForm />
+     <SigninForm />
+      {/* <SignUpForm /> */}
     </div>
   );
 }

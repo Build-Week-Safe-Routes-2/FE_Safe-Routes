@@ -44,10 +44,18 @@ const FormikSignin = withFormik({
         .catch(error => console.log('You have an ERROR', error.response))
     },
     validationSchema: Yup.object().shape({
-        email: Yup.string().required("This field requires a valid email"),
-        password: Yup.string().required("This field requires a valid required"),
-        
-    }),
+        email: Yup.string()
+        .email("Please enter a valid email address")
+        .required("You must enter an email address."),
+      password: Yup.string()
+        .required("You must enter a valid password")
+        .min(8, "Your password must be no less than 8 characters long")
+        .max(20, "Your password must be no more than 20 characters long")
+        .matches(
+          /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,20}$/gm,
+          "Your password sucks"
+        )
+     }),
 
 })(Signin)
 
