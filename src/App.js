@@ -1,14 +1,14 @@
 import React from "react";
 import "./App.css";
 
-import LoginForm from './components/LoginForm';
+import SignUpForm from "./components/SignUp/SignUp";
 
 function App() {
   return (
     <div className="App">
       <h1>Safe Routes</h1>
 
-			<LoginForm/>
+      <SignUpForm />
     </div>
   );
 }
