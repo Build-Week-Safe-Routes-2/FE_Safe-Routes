@@ -8,8 +8,8 @@ function App() {
   return (
     <div className="App">
       <h1>Safe Routes</h1>
-     {/* <SigninForm /> */}
-      <SignUpForm />
+     <SigninForm />
+      {/* <SignUpForm /> */}
     </div>
   );
 }
