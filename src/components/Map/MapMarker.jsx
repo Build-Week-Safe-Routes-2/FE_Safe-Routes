@@ -1,12 +1,10 @@
 import React from "react";
 
 const MapMarker = props => {
-  const { name, lat, lng } = props;
+  const { name } = props;
   return (
     <div>
       <h1>{name}</h1>
-      <p>{lat}</p>
-      <p>{lng}</p>
     </div>
   );
 };

@@ -22,9 +22,14 @@ const Map = props => {
         defaultCenter={props.center}
         defaultZoom={props.zoom}
       >
-        {data.map(marker => {
+        {data.map((marker, index) => {
           return (
-            <MapMarker name={marker.name} lat={marker.lat} lng={marker.lng} />
+            <MapMarker
+              key={index}
+              name={marker.name}
+              lat={marker.lat}
+              lng={marker.lng}
+            />
           );
         })}
       </GoogleMapReact>
