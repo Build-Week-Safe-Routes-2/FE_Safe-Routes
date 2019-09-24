@@ -16,9 +16,8 @@ const Signin =({errors,touched})=> {
             {touched.username && errors.username &&<p>{errors.username}</p>}
             <h2>Password</h2>
             <Field type="password" name="password" placeholder="Password" />
-            {touched.email && errors.email && <p>{errors.password}</p>}
+            {touched.password && errors.password && <p>{errors.password}</p>}
                          
-
             <button type="submit">Login</button>
             {/* <button type="submit">SignUp</button> */}
 
@@ -29,7 +28,7 @@ const Signin =({errors,touched})=> {
 }
 
 const FormikSignin = withFormik({
-    mapPropsToValues({user,password}) {
+    mapPropsToValues({email,password}) {
         return {
             username: user || '',
             password: password || '',
