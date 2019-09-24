@@ -57,7 +57,7 @@ const FormikSignUpForm = withFormik({
     axiosWithAuth()
       .post("/auth/register", {username: values.username, password: values.password})
       .then(res => {
-        console.log(res)
+				console.log(res)
       })
       .catch(err => {
         console.error("error", err);
