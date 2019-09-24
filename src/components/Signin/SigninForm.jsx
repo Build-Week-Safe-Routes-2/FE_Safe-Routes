@@ -1,5 +1,5 @@
 import React,{useState, useEffect} from 'react';
-import axiosWithAuth from 'axios';
+import axiosWithAuth from "./../../utils/axiosWithAuth";
 import {withFormik, Form, Field, yupToFormErrors} from 'formik';
 import * as Yup from 'yup'
 
@@ -13,12 +13,11 @@ const Signin =({errors,touched})=> {
         <Form>
             <h2>User</h2>
             <Field type="email" name="email" placeholder="Email" />
-            {touched.email && errors.email &&<p>{errors.email}</p>}
+            {touched.email && errors.email && <p>{errors.email}</p>}
             <h2>Password</h2>
             <Field type="password" name="password" placeholder="Password" />
-            {touched.email && errors.email && <p>{errors.password}</p>}
+            {touched.password && errors.password && <p>{errors.password}</p>}
                          
-
             <button type="submit">Login</button>
             {/* <button type="submit">SignUp</button> */}
 
@@ -29,20 +28,21 @@ const Signin =({errors,touched})=> {
 }
 
 const FormikSignin = withFormik({
-    mapPropsToValues({user,password}) {
+    mapPropsToValues({email,password}) {
         return {
-            email: user || '',
+            email: email || '',
             password: password || '',
         }
     },
     handleSubmit(values){
       axiosWithAuth()
-        .post('url', values)
+        .post( values)
         .then(response => {
             
         })
-        .catch(error => console.log('You have an ERROR', error.response))
+        .catch(error => console.log('You have an ERROR', error))
     },
+
     validationSchema: Yup.object().shape({
         email: Yup.string()
         .email("Please enter a valid email address")
