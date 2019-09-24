@@ -1,5 +1,5 @@
 import React from "react";
-import "./App.css";
+import "./App.scss";
 
 import SignUpForm from "./components/SignUp/SignUp";
 import SigninForm from './components/Signin/SigninForm'

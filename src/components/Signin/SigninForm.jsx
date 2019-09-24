@@ -1,30 +1,47 @@
 import React,{useState, useEffect} from 'react';
 import axiosWithAuth from "./../../utils/axiosWithAuth";
+import styled from "styled-components";
 import {withFormik, Form, Field, yupToFormErrors} from 'formik';
 import * as Yup from 'yup'
+
+
+const InputWrap = styled.div `
+    display: flex;
+    justify-content:center;
+    flex-direction:column;
+    background-color:#494972;
+    height:600px ;
+    margin:0 22%;  
+    border-radius:10px;
+
+`
+const InputContainerForm = styled.div`
+
+
+`
 
 
 const Signin =({errors,touched})=> {
 
 
     return (
-    <div> 
-        <h2>Sign In</h2>
-        <Form>
+    <InputWrap> 
+        <h2 className="signTitle">Sign In</h2>
+        <InputContainerForm>
             <h2>User</h2>
-            <Field type="email" name="email" placeholder="Email" />
+            <Field type="email" name="email" placeholder="Email"  className="emailInput"/>
             {touched.email && errors.email && <p>{errors.email}</p>}
             <h2>Password</h2>
-            <Field type="password" name="password" placeholder="Password" />
+            <Field type="password" name="password" placeholder="Password"className="passwordInput" />
             {touched.password && errors.password && <p>{errors.password}</p>}
-                         
-            <button type="submit">Login</button>
-            {/* <button type="submit">SignUp</button> */}
+            <div className="buttonContainer">       
+                <button type="submit" className="loginButton">Login</button>
+                <button type="submit"className="signupButton">Sign Up</button>
+            </div>      
 
-        </Form>
-    </div>
+        </InputContainerForm>
+    </InputWrap>
     )
-
 }
 
 const FormikSignin = withFormik({
