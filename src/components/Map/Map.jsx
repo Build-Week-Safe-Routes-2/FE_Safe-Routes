@@ -1,14 +1,28 @@
 import React from 'react'
-import MapNav from '../MapNav/MapNav';
-function MapView(){
-	return(
-		<div>
-			<div>
-				<MapNav/>
-			</div>
-			<h1>Hello from the map</h1>
-		</div>
-	)
-}
+import GoogleMapReact from 'google-map-react';
 
-export default MapView;
+
+
+function Map(props) {
+    return( 
+     <div style={{
+         height:'100vh',
+         width:'100%',
+     }}>
+         <GoogleMapReact
+              bootstrapURLKeys={{ key: "AIzaSyCCdxVw0N2ydpKJ_yOm3VQgQzpq4rtSgBE" }}
+              defaultCenter={props.center}
+              defaultZoom={props.zoom}
+         >
+
+
+         </GoogleMapReact>
+     </div>
+    )
+
+}
+ Map.defaultProps = {
+     center:{lat: 30.2672, lng: -97.7431 },
+     zoom:11,
+ }
+export default Map;
