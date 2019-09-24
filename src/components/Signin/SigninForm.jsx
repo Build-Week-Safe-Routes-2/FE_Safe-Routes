@@ -30,7 +30,7 @@ const Signin =({errors,touched})=> {
 const FormikSignin = withFormik({
     mapPropsToValues({email,password}) {
         return {
-            username: user || '',
+            username: email || '',
             password: password || '',
         }
     },
