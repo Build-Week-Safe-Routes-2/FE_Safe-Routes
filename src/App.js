@@ -1,15 +1,17 @@
 import React from "react";
-import "./App.css";
+import "./App.scss";
 
 import SignUpForm from "./components/SignUp/SignUp";
-import SigninForm from './components/Signin/SigninForm'
-import Map from './components/Map/Map';
+import SigninForm from "./components/Signin/SigninForm";
+import Map from "./components/Map/MapView";
+
 function App() {
   return (
     <div className="App">
-     {/* <SigninForm /> */}
-			{/* <SignUpForm /> */}
-			<Map />
+      <h1>Safe Routes</h1>
+      <Map />
+      {/* <SigninForm /> */}
+      {/* <SignUpForm /> */}
     </div>
   );
 }
