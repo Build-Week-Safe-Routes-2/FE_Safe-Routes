@@ -1,21 +1,17 @@
-import React from 'react'
-import MapNav from '../MapNav/MapNav';
-import Map from './Map'
+import React from "react";
+import MapNav from "../MapNav/MapNav";
+import Map from "./Map";
 
+function MapView() {
+  return (
+    <div>
+      <div>
+        <MapNav />
+      </div>
 
-
-function MapView(){
-	return(
-		<div>
-			<div>
-				<MapNav/>
-			</div>
-			
-			<Map />
-		</div>
-	)
+      <Map />
+    </div>
+  );
 }
-
-
 
 export default MapView;
