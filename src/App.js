@@ -10,8 +10,8 @@ function App() {
   return (
     <div className="App">
       <h1>Safe Routes</h1>
-      <Map />
-      {/* <SigninForm /> */}
+      {/* <Map /> */}
+      <SigninForm />
       {/* <SignUpForm /> */}
     </div>
   );

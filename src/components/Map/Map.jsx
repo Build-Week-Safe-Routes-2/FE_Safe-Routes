@@ -14,8 +14,6 @@ function Map(props) {
               defaultCenter={props.center}
               defaultZoom={props.zoom}
          >
-
-
          </GoogleMapReact>
      </div>
     )
