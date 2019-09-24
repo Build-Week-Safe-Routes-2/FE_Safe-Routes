@@ -7,10 +7,10 @@ const SignUpForm = ({ values, touched, errors }) => {
   return (
     <div>
       <Form>
-        <label name="email">
+        <label name="username">
           Enter your Email Address:
-          <Field type="email" name="email" placeholder="Enter your Email" />
-          {touched.email && errors.email && <p>{errors.email}</p>}
+          <Field type="email" name="username" placeholder="Enter your Email" />
+          {touched.username && errors.username && <p>{errors.username}</p>}
         </label>
         <label name="password">
           Enter your Password:
@@ -33,29 +33,31 @@ const SignUpForm = ({ values, touched, errors }) => {
 const FormikSignUpForm = withFormik({
   mapPropsToValues({ email, password, terms }) {
     return {
-      email: email || "",
+      username: email || "",
       password: password || "",
       terms: terms || false
     };
   },
   validationSchema: Yup.object().shape({
-    email: Yup.string()
+    username: Yup.string()
       .email("Please enter a valid email address")
       .required("You must enter an email address."),
     password: Yup.string()
       .required("You must enter a valid password")
       .min(8, "Your password must be no less than 8 characters long")
       .max(20, "Your password must be no more than 20 characters long")
-      .matches(
-        /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,20}$/gm,
-        "Your password sucks"
-      )
+      // .matches(
+      //   /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,20}$/gm,
+      //   "Your password sucks"
+      // )
   }),
   handleSubmit(values) {
+		console.log(values)
+		console.log({username: values.username, password: values.password})
     axiosWithAuth()
-      .post("url", values)
+      .post("/auth/register", {username: values.username, password: values.password})
       .then(res => {
-        //
+				console.log(res)
       })
       .catch(err => {
         console.error("error", err);

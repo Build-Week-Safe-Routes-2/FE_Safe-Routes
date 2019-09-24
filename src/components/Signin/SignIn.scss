@@ -1,0 +1,35 @@
+.signTitle{
+    color:#4CD9BF;
+    font-size: 2.4rem;
+  }
+  .passwordInput, .emailInput{
+    padding:3% 30%;
+    background-color:#0E2D3F;
+    border:none;
+    border-radius: 30px;
+  
+  }
+  .signupButton, .loginButton{
+    padding:2% 10%;
+    margin:6% 4%;
+    border-radius: 30px;
+    border:none;
+    background-color:#0E2D3F;
+  }
+  
+  .signupButton{
+    //   background-color: blue;
+    color:#fff;
+    font-size: 1.2rem;
+    border:1px solid #fff;
+  
+  
+  }
+  .loginButton{
+      background-color:#4CD9BF;
+      color:#fff;
+      font-size: 1.2rem;
+  }
+  .buttonContainer{
+      margin-top:5%;
+  }
