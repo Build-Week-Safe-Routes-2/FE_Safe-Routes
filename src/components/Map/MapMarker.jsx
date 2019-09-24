@@ -1,12 +1,16 @@
 import React from "react";
+import "./Marker.scss";
 
 const MapMarker = props => {
-  const { name, lat, lng } = props;
+  const { name, color } = props;
   return (
     <div>
-      <h1>{name}</h1>
-      <p>{lat}</p>
-      <p>{lng}</p>
+      <div
+        className="pin bounce"
+        style={{ background: color, pointer: "cursor" }}
+        title={name}
+      />
+      <div className="pulse" />
     </div>
   );
 };

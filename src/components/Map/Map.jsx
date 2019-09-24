@@ -1,14 +1,19 @@
 import React, { useState } from "react";
 import GoogleMapReact from "google-map-react";
+
 import MapMarker from "./MapMarker";
 
-const Map = props => {
+const Map = () => {
+  // Dummy data variable
   const dummyData = [
-    { name: "Marker", lat: 30.1571, lng: -97.7831 },
-    { name: "Marker Two", lat: 30.1621, lng: -97.7771 }
+    { name: "Danger", lat: 30.1571, lng: -97.7831 },
+    { name: "Zone", lat: 30.1621, lng: -97.7771 }
   ];
 
+  // State initializations
   const [data, setData] = useState(dummyData);
+  const [center, setCenter] = useState({ lat: 30.2672, lng: -97.7431 });
+  const [zoom, setZoom] = useState(11);
 
   return (
     <div
@@ -19,20 +24,24 @@ const Map = props => {
     >
       <GoogleMapReact
         bootstrapURLKeys={{ key: "AIzaSyCCdxVw0N2ydpKJ_yOm3VQgQzpq4rtSgBE" }}
-        defaultCenter={props.center}
-        defaultZoom={props.zoom}
+        defaultCenter={center}
+        defaultZoom={zoom}
       >
-        {data.map(marker => {
+        {/* Display marker data here */}
+        {data.map((marker, index) => {
           return (
-            <MapMarker name={marker.name} lat={marker.lat} lng={marker.lng} />
+            <MapMarker
+              key={index}
+              name={marker.name}
+              lat={marker.lat}
+              lng={marker.lng}
+              // color="blue"
+            />
           );
         })}
       </GoogleMapReact>
     </div>
   );
 };
-Map.defaultProps = {
-  center: { lat: 30.2672, lng: -97.7431 },
-  zoom: 11
-};
+
 export default Map;
