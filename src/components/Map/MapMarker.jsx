@@ -1,22 +1,16 @@
 import React from "react";
-import styled from "styled-components";
-
-const Marker = styled.div`
-  width: 15px;
-  height: 15px;
-  background: red;
-  border-radius: 100%;
-`;
+import "./Marker.scss";
 
 const MapMarker = props => {
-  const { name } = props;
+  const { name, color } = props;
   return (
     <div>
-      <Marker
-        onClick={() => {
-          console.log(name);
-        }}
-      ></Marker>
+      <div
+        className="pin bounce"
+        style={{ background: color, pointer: "cursor" }}
+        title={name}
+      />
+      <div className="pulse" />
     </div>
   );
 };
