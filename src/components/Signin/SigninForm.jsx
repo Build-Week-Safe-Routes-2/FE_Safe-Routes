@@ -1,13 +1,8 @@
-<<<<<<< HEAD
-import React,{useState, useEffect} from 'react';
-import axiosWithAuth from "./../../utils/axiosWithAuth";
-import styled from "styled-components";
-import {withFormik, Form, Field, yupToFormErrors} from 'formik';
-=======
 import React from 'react';
 import axiosWithAuth from '../../utils/axiosWithAuth';
 import { withFormik, Form, Field } from 'formik';
->>>>>>> f308b32051997203fea04234b4b9e9c430e863ab
+import styled from 'styled-components';
+import  './SignIn.scss'
 import * as Yup from 'yup'
 
 
@@ -15,8 +10,8 @@ const InputWrap = styled.div `
     display: flex;
     justify-content:center;
     flex-direction:column;
-    background-color:#494972;
-    height:600px ;
+    background-color:#1C4A5F;
+    height:700px ;
     margin:0 22%;  
     border-radius:10px;
 
@@ -35,13 +30,8 @@ const Signin =({errors,touched})=> {
         <h2 className="signTitle">Sign In</h2>
         <InputContainerForm>
             <h2>User</h2>
-<<<<<<< HEAD
-            <Field type="email" name="email" placeholder="Email"  className="emailInput"/>
-            {touched.email && errors.email && <p>{errors.email}</p>}
-=======
-            <Field type="email" name="username" placeholder="Email" />
+            <Field type="email" name="username" placeholder="Email" className="emailInput"/>
             {touched.username && errors.username &&<p>{errors.username}</p>}
->>>>>>> f308b32051997203fea04234b4b9e9c430e863ab
             <h2>Password</h2>
             <Field type="password" name="password" placeholder="Password"className="passwordInput" />
             {touched.password && errors.password && <p>{errors.password}</p>}
