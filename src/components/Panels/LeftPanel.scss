@@ -1,0 +1,55 @@
+
+.testMenu {
+	position: absolute;
+	top: 100px;
+	left: 300px;
+	background-color: orange;
+  // animation: moveElement 3s normal forwards ease-in-out;
+}
+
+.slideIn {
+	display: flex;
+	flex-direction: column;
+	animation: moveElement 3s normal forwards ease-in-out;
+}
+
+// .slideOut {
+// 	display: static;
+// 	animation: moveOut 3s normal forwards ease-in-out;
+// }
+
+// @keyframes moveOut {
+// 	from {
+// 		background-color: black;
+// 		z-index: 1;
+// 		left: 500px
+// 	}
+// 	to{
+// 		background-color: orange;
+// 		z-index: 1;
+// 		left: 0px
+// 	}
+// }
+
+@keyframes moveElement {
+	from {
+		background-color: black;
+		z-index: 1;
+		opacity: 0;
+	}
+	to{
+		background-color: orange;
+		z-index: 1;
+		opacity: 1;
+	}
+	// 20%{
+	// 	position: absolute;
+	// 	top: 25vmin;
+	// 	left: 38vw;
+	// }
+	// to {
+	// 	position: absolute;
+	// 	top: 0;
+	// 	left: 0;
+	// }
+}

@@ -23,6 +23,7 @@ function MapNav({changeCenter}) {
 	
   return (
     <div>
+			<h4>Search a City OR <br/> a specific Address</h4>
       <form onSubmit={submitHandler}>
         <input
           type="text"
