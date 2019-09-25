@@ -1,5 +1,6 @@
 import React from 'react';
 import{Link} from 'react-router-dom';
+import './nav.scss'
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Tabs from '@material-ui/core/Tabs';
@@ -17,16 +18,17 @@ export default function CenteredTabs() {
 
 
   return (
-    <Paper className={classes.root}>
+    <Paper className={classes.root} >
       <Tabs
+        className="navBar"
         value={value}
-        indicatorColor="primary"
-        textColor="primary"
+        indicatorColor="secondary"
+        textColor="default"
         centered
       >
-       <Link to="/"onClick={()=> setValue(0)}> <Tab label="Item One" /> </Link>
-       <Link to="/register" onClick={()=> setValue(1)}> <Tab label="Item Two" /> </Link>
-       <Link to="/routes" onClick={()=> setValue(2)}>  <Tab label="Item Three" /> </Link>
+       <Link to="/register"onClick={()=> setValue(0)}> <Tab label="Sign Up" className="linkOne" /> </Link>
+       <Link to="/" onClick={()=> setValue(1)}> <Tab label="Login" /> </Link>
+       <Link to="/routes" onClick={()=> setValue(2)}>  <Tab label="Map" /> </Link>
       </Tabs>
     </Paper>
   );
