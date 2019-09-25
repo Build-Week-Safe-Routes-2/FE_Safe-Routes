@@ -4,8 +4,8 @@ import "./App.scss";
 import SignUpForm from "./components/SignUp/SignUp";
 import SigninForm from "./components/Signin/SigninForm";
 import Map from "./components/Map/MapView";
-import Nav from "./components/LandingPage/Nav";
-import CenteredTabs from "./components/Lander/Landing";
+// import Nav from "./components/LandingPage/Nav";
+// import CenteredTabs from "./components/Lander/Landing";
 import { Route } from "react-router-dom";
 import LandingPage from "./components/LandingPage/LandingPage";
 
