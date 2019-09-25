@@ -2,8 +2,8 @@ import React from "react";
 import Geocode from "react-geocode";
 import axiosWithAuth from "../../utils/axiosWithAuth";
 
-function MapNav({changeCenter}) {
-  const [address, setAddress] = React.useState({ address: "" });
+function MapNav({changeCenter, updateHistory}) {
+  const [address, setAddress] = React.useState({ address: ""});
 
 	
   const changeHandler = e => {
@@ -12,7 +12,8 @@ function MapNav({changeCenter}) {
   };
 
   const submitHandler = async e => {
-    e.preventDefault();
+		e.preventDefault();
+		updateHistory(address)
 		Geocode.setApiKey("AIzaSyCCdxVw0N2ydpKJ_yOm3VQgQzpq4rtSgBE");
     Geocode.setLanguage("en");
 		const coords = await Geocode.fromAddress(address.address)

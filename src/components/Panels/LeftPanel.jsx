@@ -3,37 +3,46 @@ import MapNav from '../MapNav/MapNav';
 import './LeftPanel.scss'
 
 function LeftPanel({ changeCenter }) {
-	const [slideIn, setSlideIn] = React.useState(false)
-	const clickHandler = () => {
-		setSlideIn(!slideIn)
+	// State the is used for the short circut in the app
+	const [fadeIn, setSlideIn] = React.useState(false)
+	const [searchHistory, setSearchHistory] = React.useState([])
+
+	// Update searchHistory array
+	const updateHistory = str => {
+		setSearchHistory([...searchHistory, str])
 	}
+
+	// Changing state on clicks
+	const clickHandler = () => {
+		setSlideIn(!fadeIn)
+	}
+
 	return(
 		<div className="left-panel">
-			<MapNav changeCenter={changeCenter}/>
-			<div>
-				<button onClick={clickHandler}>Click Me</button>
+
+			<MapNav changeCenter={changeCenter} updateHistory={updateHistory}/>
+
+			<div className="lef-panel__menu">
+				<button onClick={clickHandler}>Search Date</button>
 			</div>
-			 {slideIn && <TestMenu slideIn={slideIn} clickHandler={clickHandler}/>}
+			 {/* Short circut used for rending to the UI */}
+			 {fadeIn && <DateMenu fadeIn={fadeIn} clickHandler={clickHandler} searchHistory={searchHistory}/>}
 		</div>
 	)
 }
 
 export default LeftPanel;
 
-export const TestMenu = (props) => {
+const DateMenu = (props) => {
+	
+	// Used to assing a className to the div below
+	let fadeIn = props.fadeIn ? 'fadeIn': "";
 
-	let slideIn = props.slideIn ? 'slideIn': ""
-
-	const style ={
-		animation: "moveElement 3s normal forwards ease-in-out"
-	}
 	return (
-		<div className={`testMenu ${slideIn}`} style={style}>
-			<button>Button 1</button>
-			<button>Button 2</button>
-			<button>Button 3</button>
-			<button>Button 4</button>
-			<button>Button 5</button>
+		<div className={`testMenu ${fadeIn}`}>
+			<ul>
+				{props.searchHistory.map( item => <li>{item.address}</li>)}
+			</ul>
 			<button onClick={props.clickHandler}>X</button>
 		</div>
 	)

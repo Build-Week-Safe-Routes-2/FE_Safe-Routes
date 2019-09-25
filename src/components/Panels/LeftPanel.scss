@@ -1,16 +1,16 @@
 
 .testMenu {
 	position: absolute;
-	top: 100px;
-	left: 300px;
+	top: 110px;
+	left: 290px;
 	background-color: orange;
   // animation: moveElement 3s normal forwards ease-in-out;
 }
 
-.slideIn {
+.fadeIn {
 	display: flex;
 	flex-direction: column;
-	animation: moveElement 3s normal forwards ease-in-out;
+	animation: moveElement .5s normal forwards ease-in-out;
 }
 
 // .slideOut {
@@ -41,6 +41,7 @@
 		background-color: orange;
 		z-index: 1;
 		opacity: 1;
+		left: 300px;
 	}
 	// 20%{
 	// 	position: absolute;
