@@ -21,6 +21,7 @@ const MapMarker = props => {
 			<Modal isOpen={modal} toggle={toggleModal}>
           <ModalHeader toggle={toggleModal}>{name}</ModalHeader>
           <ModalBody>
+						<h3>Info</h3>
             <ul>
 							<li>{lat}</li>
 							<li>{lng}</li>
