@@ -2,9 +2,10 @@ import React from "react";
 import Geocode from "react-geocode";
 import axiosWithAuth from "../../utils/axiosWithAuth";
 
-function MapNav() {
+function MapNav({changeCenter}) {
   const [address, setAddress] = React.useState({ address: "" });
 
+	
   const changeHandler = e => {
     // console.log(e.target.value);
     setAddress({ address: e.target.value });
@@ -17,6 +18,7 @@ function MapNav() {
 		const coords = await Geocode.fromAddress(address.address)
 		// Send this to axios with auth POST req and send that data back up to the Map Component.
 		console.log(coords.results[0].geometry.location);
+		changeCenter(coords.results[0].geometry.location)
 	};
 	
   return (
