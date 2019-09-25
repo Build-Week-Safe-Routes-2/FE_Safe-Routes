@@ -12,6 +12,7 @@ import LandingPage from "./components/LandingPage/LandingPage";
 function App() {
   return (
     <div className="App">
+      {/* <LandingPage /> */}
       {/* <h1>Safe Routes</h1> */}
       {/* <CenteredTabs /> */}
       <Route exact path="/" component={LandingPage} />
