@@ -1,12 +1,23 @@
+body{
+    // background-image: linear-gradient(120deg, #4CD9BF 0%, #8fd3f4 100%);
+}
+
 .signTitle{
     color:#4CD9BF;
     font-size: 2.4rem;
   }
   .passwordInput, .emailInput{
-    padding:3% 30%;
+    padding:3% 19%;
     background-color:#0E2D3F;
     border:none;
     border-radius: 30px;
+    margin: 2% 10%;
+
+    @media screen and(max-width: 764px) {
+        padding:6% 20%;
+        margin:0% 8%;
+
+    }
   
   }
   .signupButton, .loginButton{
@@ -15,6 +26,8 @@
     border-radius: 30px;
     border:none;
     background-color:#0E2D3F;
+    
+   
   }
   
   .signupButton{
@@ -30,6 +43,14 @@
       color:#fff;
       font-size: 1.2rem;
   }
+
   .buttonContainer{
       margin-top:5%;
+
+      @media screen and(max-width: 764px) {
+        display: flex;
+        flex-direction: column;
+        margin: 16% 4%;
+
+    }
   }

@@ -11,13 +11,10 @@ const InputWrap = styled.div `
     justify-content:center;
     flex-direction:column;
     background-color:#1C4A5F;
-    height:700px ;
-    margin:0 22%;  
+    height:750px ;
+    margin:2% 22% 5%;  
     border-radius:10px;
-
-`
-const InputContainerForm = styled.div`
-
+    box-shadow: 5px 9px 32px 2px rgba(107,105,107,1);
 
 `
 
@@ -28,7 +25,7 @@ const Signin =({errors,touched})=> {
     return (
     <InputWrap> 
         <h2 className="signTitle">Sign In</h2>
-        <InputContainerForm>
+        <Form>
             <h2>User</h2>
             <Field type="email" name="username" placeholder="Email" className="emailInput"/>
             {touched.username && errors.username &&<p>{errors.username}</p>}
@@ -40,7 +37,7 @@ const Signin =({errors,touched})=> {
                 <button type="submit"className="signupButton">Sign Up</button>
             </div>      
 
-        </InputContainerForm>
+        </Form>
     </InputWrap>
     )
 }

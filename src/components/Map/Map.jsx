@@ -35,6 +35,7 @@ const Map = () => {
               name={marker.name}
               lat={marker.lat}
               lng={marker.lng}
+              // color="blue"
             />
           );
         })}
