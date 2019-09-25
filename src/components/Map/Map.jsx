@@ -13,6 +13,56 @@ const Map = (props) => {
   // State initializations
 	const [data, setData] = useState({data: dummyData, zoom: 11});
 
+	const mapOptions = {
+		styles: [
+			{
+					"featureType": "all",
+					"stylers": [
+							{
+									"saturation": 0
+							},
+							{
+									"hue": "#e7ecf0"
+							}
+					]
+			},
+			{
+					"featureType": "road",
+					"stylers": [
+							{
+									"saturation": -70
+							}
+					]
+			},
+			{
+					"featureType": "transit",
+					"stylers": [
+							{
+									"visibility": "off"
+							}
+					]
+			},
+			{
+					"featureType": "poi",
+					"stylers": [
+							{
+									"visibility": "off"
+							}
+					]
+			},
+			{
+					"featureType": "water",
+					"stylers": [
+							{
+									"visibility": "simplified"
+							},
+							{
+									"saturation": -60
+							}
+					]
+			}
+		]
+	}
   return (
     <div
       style={{
@@ -23,7 +73,8 @@ const Map = (props) => {
       <GoogleMapReact
         bootstrapURLKeys={{ key: "AIzaSyCCdxVw0N2ydpKJ_yOm3VQgQzpq4rtSgBE" }}
         center={props.centerMap}
-        defaultZoom={data.zoom}
+				defaultZoom={data.zoom}
+				options={mapOptions}
       >
 				{/* Display marker data here */}
         {data.data.map((marker, index) => {
