@@ -1,34 +1,26 @@
 import React from "react";
 import Geocode from "react-geocode";
+import axiosWithAuth from "../../utils/axiosWithAuth";
 
-function MapNav() {
+function MapNav({changeCenter}) {
   const [address, setAddress] = React.useState({ address: "" });
-  const [locale, setLocale] = React.useState({ lat: "", lng: "" });
 
-  const getLocation = location => {
-    Geocode.setApiKey("AIzaSyCCdxVw0N2ydpKJ_yOm3VQgQzpq4rtSgBE");
-    Geocode.setLanguage("en");
-    Geocode.fromAddress(location).then(
-      response => {
-        const { lat, lng } = response.results[0].geometry.location;
-        setLocale({ lat: lat, lng: lng });
-      },
-      error => {
-        console.error("error in getLocation function", error);
-      }
-    );
-  };
-
+	
   const changeHandler = e => {
     // console.log(e.target.value);
     setAddress({ address: e.target.value });
   };
 
-  const submitHandler = e => {
+  const submitHandler = async e => {
     e.preventDefault();
-    getLocation(address.address);
-    // console.log(address.address);
-  };
+		Geocode.setApiKey("AIzaSyCCdxVw0N2ydpKJ_yOm3VQgQzpq4rtSgBE");
+    Geocode.setLanguage("en");
+		const coords = await Geocode.fromAddress(address.address)
+		// Send this to axios with auth POST req and send that data back up to the Map Component.
+		console.log(coords.results[0].geometry.location);
+		changeCenter(coords.results[0].geometry.location)
+	};
+	
   return (
     <div>
       <form onSubmit={submitHandler}>

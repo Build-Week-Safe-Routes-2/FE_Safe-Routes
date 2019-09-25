@@ -3,7 +3,7 @@ import GoogleMapReact from "google-map-react";
 
 import MapMarker from "./MapMarker";
 
-const Map = () => {
+const Map = (props) => {
   // Dummy data variable
   const dummyData = [
     { name: "Danger", lat: 30.1571, lng: -97.7831 },
@@ -11,24 +11,22 @@ const Map = () => {
   ];
 
   // State initializations
-  const [data, setData] = useState(dummyData);
-  const [center, setCenter] = useState({ lat: 30.2672, lng: -97.7431 });
-  const [zoom, setZoom] = useState(11);
+	const [data, setData] = useState({data: dummyData, zoom: 11});
 
   return (
     <div
       style={{
-        height: "100vh",
+				height: "82.4vh",
         width: "100%"
       }}
     >
       <GoogleMapReact
         bootstrapURLKeys={{ key: "AIzaSyCCdxVw0N2ydpKJ_yOm3VQgQzpq4rtSgBE" }}
-        defaultCenter={center}
-        defaultZoom={zoom}
+        center={props.centerMap}
+        defaultZoom={data.zoom}
       >
-        {/* Display marker data here */}
-        {data.map((marker, index) => {
+				{/* Display marker data here */}
+        {data.data.map((marker, index) => {
           return (
             <MapMarker
               key={index}
