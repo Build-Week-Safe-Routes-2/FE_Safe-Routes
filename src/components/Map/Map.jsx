@@ -13,7 +13,7 @@ const Map = () => {
   // State initializations
   const [data, setData] = useState(dummyData);
   const [center, setCenter] = useState({ lat: 30.2672, lng: -97.7431 });
-  const [zoom, setZoom] = useState(11);
+	const [zoom, setZoom] = useState(11);
 
   return (
     <div
@@ -27,7 +27,7 @@ const Map = () => {
         defaultCenter={center}
         defaultZoom={zoom}
       >
-        {/* Display marker data here */}
+				{/* Display marker data here */}
         {data.map((marker, index) => {
           return (
             <MapMarker
