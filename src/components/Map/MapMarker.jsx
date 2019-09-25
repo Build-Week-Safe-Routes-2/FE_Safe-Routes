@@ -21,13 +21,14 @@ const MapMarker = props => {
 			<Modal isOpen={modal} toggle={toggleModal}>
           <ModalHeader toggle={toggleModal}>{name}</ModalHeader>
           <ModalBody>
+						<h3>Info</h3>
             <ul>
 							<li>{lat}</li>
 							<li>{lng}</li>
 						</ul>
           </ModalBody>
           <ModalFooter>
-            <Button color="secondary" onClick={toggleModal}>Cancel</Button>
+            <Button color="secondary" onClick={toggleModal}>Close</Button>
           </ModalFooter>
         </Modal>
     </div>
