@@ -13,13 +13,16 @@ function MapNav({changeCenter, updateHistory}) {
 
   const submitHandler = async e => {
 		e.preventDefault();
-		updateHistory(address)
-		Geocode.setApiKey("AIzaSyCCdxVw0N2ydpKJ_yOm3VQgQzpq4rtSgBE");
-    Geocode.setLanguage("en");
-		const coords = await Geocode.fromAddress(address.address)
-		// Send this to axios with auth POST req and send that data back up to the Map Component.
-		console.log(coords.results[0].geometry.location);
-		changeCenter(coords.results[0].geometry.location)
+		if(address.address !== "") {
+			updateHistory(address)
+			Geocode.setApiKey("AIzaSyCCdxVw0N2ydpKJ_yOm3VQgQzpq4rtSgBE");
+			Geocode.setLanguage("en");
+			const coords = await Geocode.fromAddress(address.address)
+			// Send this to axios with auth POST req and send that data back up to the Map Component.
+			console.log(coords.results[0].geometry.location);
+			changeCenter(coords.results[0].geometry.location)
+			setAddress({address: ""})
+		}
 	};
 	
   return (

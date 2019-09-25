@@ -14,7 +14,10 @@ function LeftPanel({ changeCenter }) {
 
 	// Changing state on clicks
 	const clickHandler = () => {
-		setSlideIn(!fadeIn)
+		if(searchHistory.length > 0){
+			setSlideIn(!fadeIn)
+		}
+			
 	}
 
 	return(
@@ -23,10 +26,16 @@ function LeftPanel({ changeCenter }) {
 			<MapNav changeCenter={changeCenter} updateHistory={updateHistory}/>
 
 			<div className="lef-panel__menu">
-				<button onClick={clickHandler}>Search Date</button>
+				<button onClick={clickHandler}>Search History</button>
 			</div>
 			 {/* Short circut used for rending to the UI */}
-			 {fadeIn && <DateMenu fadeIn={fadeIn} clickHandler={clickHandler} searchHistory={searchHistory}/>}
+			 { fadeIn && 
+				 <DateMenu 
+					 fadeIn={fadeIn} 
+					 clickHandler={clickHandler} 
+					 searchHistory={searchHistory}
+					/>
+				}
 		</div>
 	)
 }
@@ -40,9 +49,11 @@ const DateMenu = (props) => {
 
 	return (
 		<div className={`testMenu ${fadeIn}`}>
-			<ul>
-				{props.searchHistory.map( item => <li>{item.address}</li>)}
-			</ul>
+			<div>
+				<ul>
+					{props.searchHistory.map( item => <li>{item.address}</li>)}
+				</ul>
+			</div>
 			<button onClick={props.clickHandler}>X</button>
 		</div>
 	)
