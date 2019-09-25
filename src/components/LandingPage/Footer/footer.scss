@@ -1,12 +1,17 @@
 @import "../variables.scss";
 
 .footer-wrapper {
-  width: 60%;
+  width: 90%;
   margin: 0 auto;
+  height: 400px;
+  background: red;
 }
 .footer-container {
+  display: flex;
+  //   background: green;
   background: url(./assets/undraw_bus_stop_h370.svg);
   background-repeat: no-repeat;
-  width: 100%;
+  width: 80%;
+  height: 100%;
   margin: 0 auto;
 }
