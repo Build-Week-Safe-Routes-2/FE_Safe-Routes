@@ -24,12 +24,12 @@ const Signin =({errors,touched})=> {
 
     return (
     <InputWrap> 
-        <h2 className="signTitle">Sign In</h2>
+        <h2 className="signTitle">Login</h2>
         <Form>
-            <h2>User</h2>
+            {/* <h2>User</h2> */}
             <Field type="email" name="username" placeholder="Email" className="emailInput"/>
             {touched.username && errors.username &&<p>{errors.username}</p>}
-            <h2>Password</h2>
+            {/* <h2>Password</h2> */}
             <Field type="password" name="password" placeholder="Password"className="passwordInput" />
             {touched.password && errors.password && <p>{errors.password}</p>}
             <div className="buttonContainer">       
