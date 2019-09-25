@@ -1,12 +1,22 @@
 
-.testMenu {
+.history-menu {
 	position: absolute;
 	top: 110px;
 	left: 290px;
-	background-color: #E8E8E8;
-	color: #57E4A7;
+	background-color: #FAFBFD;
+	color: #6A8295;
 	width:20%;
-  // animation: moveElement 3s normal forwards ease-in-out;
+	margin: 0;
+	// animation: moveElement 3s normal forwards ease-in-out;
+	
+	.history-menu__item {
+		&:nth-child(odd) {
+			background-color: #FAFBFD;
+		}
+		&:nth-child(even) {
+			background-color: #FFFFFF;
+		}
+	}
 }
 
 .fadeIn {

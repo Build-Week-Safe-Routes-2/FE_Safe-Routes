@@ -27,8 +27,8 @@ const Signin =({errors,touched})=> {
         <h2 className="signTitle">Sign In</h2>
         <Form>
             <h2>User</h2>
-            <Field type="email" name="username" placeholder="Email" className="emailInput"/>
-            {touched.username && errors.username &&<p>{errors.username}</p>}
+            <Field type="email" name="email" placeholder="Email" className="emailInput"/>
+            {touched.email && errors.email &&<p>{errors.email}</p>}
             <h2>Password</h2>
             <Field type="password" name="password" placeholder="Password"className="passwordInput" />
             {touched.password && errors.password && <p>{errors.password}</p>}
@@ -45,13 +45,13 @@ const Signin =({errors,touched})=> {
 const FormikSignin = withFormik({
     mapPropsToValues({email,password}) {
         return {
-            username: email || '',
+            email: email || '',
             password: password || '',
         }
     },
 
     validationSchema: Yup.object().shape({
-        username: Yup.string()
+        email: Yup.string()
         .email("Please enter a valid email address")
         .required("You must enter an email address."),
       password: Yup.string()
@@ -68,6 +68,7 @@ const FormikSignin = withFormik({
 			axiosWithAuth()
 				.post('/auth/login', values)
 				.then(res => {
+						console.log(values)
 						console.log(res)
 				})
 				.catch(err => console.log('You have an ERROR', err.response))

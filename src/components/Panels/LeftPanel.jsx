@@ -48,10 +48,13 @@ const DateMenu = (props) => {
 	let fadeIn = props.fadeIn ? 'fadeIn': "";
 
 	return (
-		<div className={`testMenu ${fadeIn}`}>
-			<div>
-				<ul>
-					{props.searchHistory.map( item => <li>{item.address}</li>)}
+		<div className={`history-menu ${fadeIn}`}>
+			<div className="history-menu__list-container">
+				<ul className="history-menu__list">
+					{props.searchHistory.map( item => {
+							return <li className="history-menu__item">{item.address}</li>
+						})
+					}
 				</ul>
 			</div>
 			<button onClick={props.clickHandler}>X</button>
