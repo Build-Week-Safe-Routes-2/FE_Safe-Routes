@@ -8,7 +8,6 @@ const MapMarker = props => {
       <div
         className="pin bounce"
         style={{ background: color, pointer: "cursor" }}
-        title={name}
       />
       <div className="pulse" />
     </div>
