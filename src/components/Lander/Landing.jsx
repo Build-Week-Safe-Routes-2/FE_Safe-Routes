@@ -22,13 +22,13 @@ export default function CenteredTabs() {
       <Tabs
         className="navBar"
         value={value}
-        indicatorColor="secondary"
+        indicatorColor="primary"
         textColor="default"
         centered
       >
-       <Link to="/register"onClick={()=> setValue(0)}> <Tab label="Sign Up" className="linkOne" /> </Link>
-       <Link to="/" onClick={()=> setValue(1)}> <Tab label="Login" /> </Link>
-       <Link to="/routes" onClick={()=> setValue(2)}>  <Tab label="Map" /> </Link>
+       <Link to="/"onClick={()=> setValue(0)} > <Tab label="Sign Up" className="links" /> </Link>
+       <Link to="/register" onClick={()=> setValue(1)}> <Tab label="Login"  className="links" /> </Link>
+       <Link to="/routes" onClick={()=> setValue(2)}>  <Tab label="Map"   className="links"/> </Link>
       </Tabs>
     </Paper>
   );

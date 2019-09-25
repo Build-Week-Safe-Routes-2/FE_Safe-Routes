@@ -13,10 +13,11 @@ function App() {
   return (
     <div className="App">
       <h1>Safe Routes</h1>
-      <CenteredTabs />
-      <Route exact path="/" component={SigninForm} />
-      <Route  path="/register" component={SignUpForm} />
-      <Route  path="/routes" component={Map} />
+      <Nav />
+      {/* <CenteredTabs />
+      <Route exact path="/" component={SignUpForm} />
+      <Route path="/register" component={SigninForm} />
+      <Route  path="/routes" component={Map} /> */}
       {/* <Map /> */}
       {/* <Nav /> */}
       {/* <SigninForm /> */}
