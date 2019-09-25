@@ -14,10 +14,10 @@ function App() {
     <div className="App">
       {/* <h1>Safe Routes</h1> */}
       {/* <CenteredTabs /> */}
-      {/* <Route exact path="/" component={LandingPage} /> */}
+      <Route exact path="/" component={LandingPage} />
       <Route path="/register" component={SignUpForm} />
       <Route path="/routes" component={Map} />
-      <Map />
+      {/* <Map /> */}
       {/* <Nav /> */}
       {/* <SigninForm /> */}
       {/* <SignUpForm /> */}
