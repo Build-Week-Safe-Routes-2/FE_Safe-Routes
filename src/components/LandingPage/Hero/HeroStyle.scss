@@ -24,6 +24,14 @@ img.backBottom {
   width: 100%;
   top: 60vh;
 }
+.logo{
+    display: flex;
+    width: 80%;
+    margin-top: 1%;
+    .logoPin{
+        margin-right: 3%;
+    }
+}
 
 .mainContainer {
   width: 60%;
@@ -45,6 +53,7 @@ img.backBottom {
     width: 40%;
     display: flex;
     justify-content: flex-end;
+
   }
   a {
     text-decoration: none;
@@ -108,4 +117,8 @@ img.backBottom {
       height: 100%;
     }
   }
+}
+
+.test{
+    margin-top:300px;
 }

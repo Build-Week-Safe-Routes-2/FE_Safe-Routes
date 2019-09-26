@@ -16,6 +16,7 @@ function App() {
       {/* <CenteredTabs /> */}
       <Route exact path="/" component={LandingPage} />
       <Route path="/register" component={SignUpForm} />
+      <Route path='/login' component={SigninForm} />
       <Route path="/routes" component={Map} />
       {/* <Map /> */}
       {/* <Nav /> */}

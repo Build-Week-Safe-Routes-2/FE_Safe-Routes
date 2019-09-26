@@ -1,6 +1,138 @@
+@import "../variables.scss";
+
 .block {
-  margin-top: 50%;
-  height: 500px;
-  background: red;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin:  30% 0 10%;
   width: 100%;
+   
+    h3{
+      font-size: 4rem;
+      color:$header-blue;
+      font-family: cabin;
+    }
+    p{
+      font-size: 1.7rem;
+      margin: 2% 30%;
+      color:$light-grey;
+      font-family: cabin;
+      letter-spacing: 1px;
+      line-height: 1.8;
+    }
 }
+.road{
+  display: flex;
+}
+.bodyHeadContainer{
+  width: 50%;
+}
+.mapDark{
+  height:100%;
+  width: 90%;
+  margin-bottom: 20%;
+  margin-top: 5%;
+}
+
+.featureWrap{
+   display: flex;
+   width: 80%;
+   margin-top: 5%;
+
+
+   .mapLight{
+     width:100%;
+     margin-left: 20%;
+   }
+   .infoRight{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width:60%;
+      height:300px;
+      margin-left: 30%;
+
+
+     h4{
+       font-size: 3rem;
+       color:#4F79A4;
+       text-align: right;
+       width:100%;
+       margin-right: -90%;
+       font-family: cabin;
+     }
+     p{
+       text-align: left;
+       line-height: 1.9;
+       width:90%;
+       border-right:1px solid grey;
+       padding-right: 3%;
+       padding-top:3%;
+       padding-bottom:3%;
+       color:$light-grey;
+      //  margin-top: 20px;
+       font-family: cabin;
+       font-size: 1.7rem;
+       letter-spacing: 1px;
+     }
+    .pinHead{
+      display: flex;
+    }
+   }
+
+
+}
+
+.infoLeftWrap{
+  display: flex;
+  width: 70%;
+  margin-top: 10%;
+ 
+
+}
+.leftContainer{
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+
+  p{
+    width: 80%;
+    border-left:1px solid grey;
+    text-align: left;
+    margin-top:10px;
+    padding:20px;
+    margin-left:-5px;
+    line-height: 1.9;
+    color:$light-grey;
+    font-family: cabin;
+    font-size: 1.7rem;
+    letter-spacing: 1px;
+  }
+   h4{
+     color:#4F79A4;
+     font-size: 3rem;
+     text-align: left;
+     margin-left: 3%;
+     font-family: cabin;
+   }
+    .pinHead2{
+      display: flex;
+      margin-right: -70px;
+    }
+    .pins2{
+      margin-left:5%;
+    }
+ 
+}
+
+.globe{
+  width: 40%;
+  margin-top: 2%;
+  
+}
+
+
+
