@@ -13,9 +13,18 @@ function LeftPanel({ changeCenter }) {
 	}
 
 	// Changing state on clicks
-	const clickHandler = () => {
-		if(searchHistory.length > 0){
-			setSlideIn(!fadeIn)
+	const clickHandler = (e) => {
+		switch(e.target.textContent){
+			case "Search History":
+				if(searchHistory.length > 0){
+						setSlideIn(!fadeIn)
+					}
+				break
+			case "Search Date":
+				console.log(e.target.textContent)
+				break
+			default: 
+				return null
 		}
 			
 	}
@@ -27,15 +36,10 @@ function LeftPanel({ changeCenter }) {
 
 			<div className="lef-panel__menu">
 				<button onClick={clickHandler}>Search History</button>
+				<button onClick={clickHandler}>Search Date</button>
 			</div>
 			 {/* Short circut used for rending to the UI */}
-			 { fadeIn && 
-				 <DateMenu 
-					 fadeIn={fadeIn} 
-					 clickHandler={clickHandler} 
-					 searchHistory={searchHistory}
-					/>
-				}
+			 {fadeIn && <DateMenu fadeIn={fadeIn} clickHandler={clickHandler} searchHistory={searchHistory}/>}
 		</div>
 	)
 }
