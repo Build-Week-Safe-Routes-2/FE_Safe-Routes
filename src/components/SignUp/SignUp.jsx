@@ -7,10 +7,10 @@ const SignUpForm = ({ values, touched, errors }) => {
   return (
     <div>
       <Form>
-        <label name="username">
+        <label name="email">
           Enter your Email Address:
-          <Field type="email" name="username" placeholder="Enter your Email" />
-          {touched.username && errors.username && <p>{errors.username}</p>}
+          <Field type="email" name="email" placeholder="Enter your Email" />
+          {touched.email && errors.email && <p>{errors.email}</p>}
         </label>
         <label name="password">
           Enter your Password:
@@ -33,13 +33,13 @@ const SignUpForm = ({ values, touched, errors }) => {
 const FormikSignUpForm = withFormik({
   mapPropsToValues({ email, password, terms }) {
     return {
-      username: email || "",
+      email: email || "",
       password: password || "",
       terms: terms || false
     };
   },
   validationSchema: Yup.object().shape({
-    username: Yup.string()
+    email: Yup.string()
       .email("Please enter a valid email address")
       .required("You must enter an email address."),
     password: Yup.string()
@@ -53,9 +53,9 @@ const FormikSignUpForm = withFormik({
   }),
   handleSubmit(values) {
 		console.log(values)
-		console.log({username: values.username, password: values.password})
+		console.log({email: values.email, password: values.password})
     axiosWithAuth()
-      .post("/auth/register", {username: values.username, password: values.password})
+      .post("/auth/register", {email: values.email, password: values.password})
       .then(res => {
 				console.log(res)
       })

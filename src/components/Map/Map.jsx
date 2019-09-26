@@ -32,7 +32,7 @@ const Map = props => {
       }}
     >
       <GoogleMapReact
-        bootstrapURLKeys={{ key: "AIzaSyCCdxVw0N2ydpKJ_yOm3VQgQzpq4rtSgBE" }}
+        bootstrapURLKeys={{ key: `${process.env.REACT_APP_API_KEY}` }}
         center={props.centerMap}
         defaultZoom={data.zoom}
         options={mapStyles}
