@@ -9,7 +9,7 @@ const LandingPage = () => {
     //
     <div>
       <Hero />
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 };
