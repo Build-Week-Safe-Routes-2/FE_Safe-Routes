@@ -6,6 +6,7 @@ import mapDark from './img/undraw_Map_dark_k9pw (1).svg'
 import rightPlace from './img/rightPlace.svg';
 import globe from './img/globe.svg';
 import pins from './img/Group.svg'
+import title from './img/topTitle.svg'
 
 
 const Body = () => {
@@ -16,7 +17,7 @@ const Body = () => {
         <h3>Finding a better Route Together</h3>
         <p> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dicta perferendis nisi nemo suscipit cumque? </p>
           <div className="bodyHeadContainer">
-            <img src={mapDark} alt="map" className="mapLight" />
+            <img src={title} alt="map" className="mapDark" />
           </div>
         <div className="featureWrap">
            <div className="featureOne">
