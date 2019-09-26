@@ -2,15 +2,11 @@ import React from "react";
 import "./Marker.scss";
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 
-const MapMarker = props => {
-	const { name, lat, lng} = props;
+const MapMarker = ({marker}) => {
 	const [modal, setModal] = React.useState(false)
 
 	const toggleModal = () => {
-		console.log(modal)
 		setModal(!modal)
-		// console.log(modal)
-
 	}
 
   return (
@@ -19,12 +15,13 @@ const MapMarker = props => {
         className="pin"
       />
 			<Modal isOpen={modal} toggle={toggleModal}>
-          <ModalHeader toggle={toggleModal}>{name}</ModalHeader>
           <ModalBody>
-						<h3>Info</h3>
+						<h3>Current Weather: {marker.current_weather}</h3>
             <ul>
-							<li>{lat}</li>
-							<li>{lng}</li>
+							<li>Likelyhood of an accident: {marker.probability_accident}</li>
+							<li>Accidents Happen Most At {marker.hour_most_accidents}</li>
+							<li>Month The Most Deaths Occur Is In {marker.month_most_accidents}</li>
+							<li>Most common accident is {marker.most_common_type_collision}</li>
 						</ul>
           </ModalBody>
           <ModalFooter>
