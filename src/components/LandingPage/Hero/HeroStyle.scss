@@ -42,7 +42,6 @@ img.backBottom {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 3% 0;
 
   h1 a {
     color: #fff;
@@ -55,12 +54,6 @@ img.backBottom {
     width: 45%;
     display: flex;
     justify-content: flex-end;
-  }
-  .navLinks a {
-    text-decoration: none;
-    font-size: 1.8rem;
-    color: #fff;
-    margin: 0 5%;
   }
 }
 

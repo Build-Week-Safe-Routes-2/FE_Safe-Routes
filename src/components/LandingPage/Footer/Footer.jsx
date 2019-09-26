@@ -19,8 +19,12 @@ const Footer = () => {
               <Link className="footer-link">GitHub</Link>
             </nav>
             <nav className="right-nav">
-              <Link className="footer-link">Login</Link>
-              <Link className="footer-link">Sign Up</Link>
+              <Link to="/login" className="footer-link">
+                Login
+              </Link>
+              <Link to="/register" className="footer-link">
+                Sign Up
+              </Link>
               <Link className="footer-link">Updates</Link>
               <Link className="footer-link">Blog</Link>
               <Link className="footer-link">Mailing List</Link>
