@@ -2,9 +2,14 @@ import React from "react";
 import Geocode from "react-geocode";
 import axiosWithAuth from "../../utils/axiosWithAuth";
 
-function MapNav({changeCenter, updateHistory}) {
-  const [address, setAddress] = React.useState({ address: ""});
+// Context
+import { MapMarkers } from '../../context/MapMarkerContext';
 
+function MapNav({changeCenter, updateHistory}) {
+	const [address, setAddress] = React.useState({ address: ""});
+	const {mapMarkers, setMapMarkers} = React.useContext(MapMarkers);
+
+	console.log("THIS IS OUR CONTEXT", mapMarkers, setMapMarkers)
 	
   const changeHandler = e => {
     // console.log(e.target.value);
@@ -14,14 +19,16 @@ function MapNav({changeCenter, updateHistory}) {
   const submitHandler = async e => {
 		e.preventDefault();
 		if(address.address !== "") {
-			updateHistory(address)
+			updateHistory(address);
 			Geocode.setApiKey(`${process.env.REACT_APP_API_KEY}`);
 			Geocode.setLanguage("en");
-			const coords = await Geocode.fromAddress(address.address)
+			const coords = await Geocode.fromAddress(address.address);
 			// Send this to axios with auth POST req and send that data back up to the Map Component.
 			console.log(coords.results[0].geometry.location);
-			changeCenter(coords.results[0].geometry.location)
-			setAddress({address: ""})
+			changeCenter(coords.results[0].geometry.location);
+			// Context Setter
+			setMapMarkers(coords.results[0].geometry.location);
+			setAddress({address: ""});
 		}
 	};
 	

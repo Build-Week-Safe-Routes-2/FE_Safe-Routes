@@ -4,12 +4,19 @@ import GoogleMapReact from "google-map-react";
 import MapMarker from "./MapMarker";
 import { darkMode, lightMode } from "./mapStyles";
 
+// Context
+import { MapMarkers } from '../../context/MapMarkerContext';
+
 const Map = props => {
   // Dummy data variable
   const dummyData = [
     { name: "Danger", lat: 30.1571, lng: -97.7831 },
     { name: "Zone", lat: 30.1621, lng: -97.7771 }
-  ];
+	];
+	
+	// Connecting to context
+	const {mapMarkers} = React.useContext(MapMarkers)
+	console.log("CONTEXT IN MAP COMPONENT", mapMarkers)
 
   const getDate = new Date();
   const myDate = getDate.getHours();
