@@ -50,7 +50,7 @@ function LeftPanel({ changeCenter }) {
 				<button onClick={clickHandler}>Search History</button>
 				<button onClick={clickHandler}>Search Date</button>
 			</div>
-			 {/* Short circut used for rending to the UI */}
+			 {/* Short circut used for rending history menu to the UI */}
 			 {fadeIn && <HistoryMenu fadeIn={fadeIn} clickHandler={clickHandler} searchHistory={searchHistory}/>}
 			 {/* Short circut for the modal */}
 			 {modal && <SearchDateModal modal={modal} toggleModal={toggleModal}/>}
