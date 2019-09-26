@@ -7,6 +7,8 @@ import pin from "./images/car.svg";
 import Rectangle from "./images/Rectangle.png";
 import lightRec from "./images/Rectangle (1).png";
 import bottomRec from "./images/Vector.png";
+import Cars from './images/colorCar.svg'
+import Logo from './images/Group.svg'
 
 const Hero = props => {
   return (
@@ -18,8 +20,10 @@ const Hero = props => {
       </div>
       <div className="mainContainer">
         <div className="navWrap">
+          <div className="logo">
+            <img src={Logo} alt="logo" className="logoPin" />
           <h1>Safe Routes</h1>
-
+          </div>
           <div className="navLinks">
             <a href="#">Sign In</a>
             <a href="#">Login</a>
@@ -37,7 +41,7 @@ const Hero = props => {
             <button>Start Here</button>
           </div>
           <div className="vectorContainer">
-            <img src={pin} alt="map"></img>
+            <img src={Cars} alt="map"></img>
           </div>
         </div>
       </div>
