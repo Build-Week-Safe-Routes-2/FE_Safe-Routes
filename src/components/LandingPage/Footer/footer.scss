@@ -12,8 +12,8 @@
   height: 100%;
   margin: 0 auto;
   align-items: center;
-  justify-content: center;
-   margin-bottom: 10%;
+  justify-content: space-between;
+  margin-bottom: 10%;
 
   .footer-nav-container {
     margin-top: 4%;
@@ -89,7 +89,12 @@
       display: flex;
       justify-content: space-between;
       margin-top: 25px;
-     
+
+      svg {
+        color: $light-grey;
+        opacity: 0.8;
+        font-size: 1.6rem;
+      }
     }
   }
 }
