@@ -4,28 +4,18 @@ import { withFormik, Form, Field } from 'formik';
 import styled from 'styled-components';
 import  './SignIn.scss'
 import * as Yup from 'yup'
+import rectangle from './images/Rectangle.png'
+import rec2 from './images/rec2.png'
+import rec3 from './images/rec3.png'
 
 
-const InputWrap = styled.div `
-    display: flex;
-    justify-content:center;
-    flex-direction:column;
-    background-color:#4f79a4;
-    height:750px ;
-    margin:2% 22% 5%;  
-    border-radius:10px;
-    box-shadow: 5px 9px 32px 2px rgba(107,105,107,1);
-
-`
-
-
-const Signin =({errors,touched})=> {
+const SigninForm =({errors,touched})=> {
 
 
     return (
-    <InputWrap> 
-        <h2 className="signTitle">Login</h2>
-        <Form>
+    <div> 
+        
+        <Form className="formWrap">
             <Field type="email" name="email" placeholder="Email" className="emailInput"/>
             {touched.email && errors.email &&<p>{errors.email}</p>}
             <Field type="password" name="password" placeholder="Password"className="passwordInput" />
@@ -36,7 +26,7 @@ const Signin =({errors,touched})=> {
             </div>      
 
         </Form>
-    </InputWrap>
+    </div>
     )
 }
 
@@ -72,6 +62,6 @@ const FormikSignin = withFormik({
 				.catch(err => console.log('You have an ERROR', err.response))
 		}
 
-})(Signin)
+})(SigninForm)
 
 export default FormikSignin;

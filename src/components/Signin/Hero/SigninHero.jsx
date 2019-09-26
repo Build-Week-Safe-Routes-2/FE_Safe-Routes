@@ -1,17 +1,18 @@
 import React from "react";
 import {Link} from 'react-router-dom';
-import "../../reset.scss";
-import "../../../index.scss";
-import "./HeroStyle.scss";
-import "./hero.scss";
-import pin from "./images/car.svg";
+import SigninForm from '../SigninForm'
+// import pin from "./images/car.svg";
 import Rectangle from "./images/Rectangle.png";
 import lightRec from "./images/Rectangle (1).png";
 import bottomRec from "./images/Vector.png";
 import Cars from './images/colorCar.svg'
 import Logo from './images/Group.svg'
+import "../../reset.scss";
+import "../../../index.scss";
+import "./HeroStyle.scss";
 
-const Hero = props => {
+
+const SigninHero = props => {
   return (
     <div>
       <div className="waveBack">
@@ -34,13 +35,9 @@ const Hero = props => {
         </div>
         <div className="heroWrap">
           <div className="missionWrap">
-            <h2>Planning safety first</h2>
-            <p>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint,
-              esse eum assumenda accusantium cumque illum provident impedit fuga
-              nisi aliquid dolorum id. Iusto aliquam reprehenderit nisi dicta
-              maiores amet earum?
-            </p>
+
+
+          <SigninForm />
             <button>Start Here</button>
           </div>
           <div className="vectorContainer">
@@ -52,4 +49,4 @@ const Hero = props => {
   );
 };
 
-export default Hero;
+export default SigninHero;
