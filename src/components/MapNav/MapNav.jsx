@@ -1,6 +1,6 @@
 import React from "react";
 import Geocode from "react-geocode";
-import axiosWithAuth from "../../utils/axiosWithAuth";
+import axios from "axios";
 
 // Context
 import { MapMarkers } from '../../context/MapMarkerContext';
@@ -9,7 +9,7 @@ function MapNav({changeCenter, updateHistory}) {
 	const [address, setAddress] = React.useState({ address: ""});
 	const {mapMarkers, setMapMarkers} = React.useContext(MapMarkers);
 
-	console.log("THIS IS OUR CONTEXT", mapMarkers, setMapMarkers)
+	// console.log("THIS IS OUR CONTEXT", mapMarkers, setMapMarkers)
 	
   const changeHandler = e => {
     // console.log(e.target.value);
@@ -25,9 +25,15 @@ function MapNav({changeCenter, updateHistory}) {
 			const coords = await Geocode.fromAddress(address.address);
 			// Send this to axios with auth POST req and send that data back up to the Map Component.
 			console.log(coords.results[0].geometry.location);
+			// Change the center view of the map
 			changeCenter(coords.results[0].geometry.location);
-			// Context Setter
+			// Hit DS API
 			setMapMarkers(coords.results[0].geometry.location);
+			const payload = coords.results[0].geometry.location
+			axios.post("http://saferoads.herokuapp.com/api", payload)
+			.then(res => console.log(res))
+			.catch(err => console.log(err))
+			// Context Setter
 			setAddress({address: ""});
 		}
 	};
