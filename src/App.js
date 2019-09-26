@@ -8,6 +8,9 @@ import Map from "./components/Map/MapView";
 // import CenteredTabs from "./components/Lander/Landing";
 import { Route } from "react-router-dom";
 import LandingPage from "./components/LandingPage/LandingPage";
+import SigninHero from './components/Signin/Hero/SigninHero'
+// import SigninHero from  "./components/Signin/SigninHero"
+
 
 function App() {
   return (
@@ -15,8 +18,8 @@ function App() {
       {/* <h1>Safe Routes</h1> */}
       {/* <CenteredTabs /> */}
       <Route exact path="/" component={LandingPage} />
+      <Route path='/login' component={SigninHero} />
       <Route path="/register" component={SignUpForm} />
-      <Route path='/login' component={SigninForm} />
       <Route path="/routes" component={Map} />
       {/* <Map /> */}
       {/* <Nav /> */}
