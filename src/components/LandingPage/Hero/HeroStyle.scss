@@ -7,7 +7,7 @@ img.back{
     margin-right:500%;
 }
 img.backBottom{
-    position: fixed;
+    position: absolute;
     display: flex;
     z-index: -1;
     width:100%;
@@ -91,4 +91,8 @@ img.backBottom{
     }
 
    
+}
+
+.test{
+    margin-top:300px;
 }

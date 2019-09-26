@@ -40,9 +40,8 @@ const Hero = (props) => {
           <img src={pin} alt="map"></img>
        </div>
     </div>
-
-
   </div>
+   <h1 className="test">Hello</h1>
   </div>
     );
 };
