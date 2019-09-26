@@ -1,27 +1,39 @@
 import React from 'react'
 import MapNav from '../MapNav/MapNav';
+import HistoryMenu from './HistoryMenu';
+import SearchDateModal from './SearchDateModal';
 import './LeftPanel.scss'
 
 function LeftPanel({ changeCenter }) {
 	// State the is used for the short circut in the app
 	const [fadeIn, setSlideIn] = React.useState(false)
 	const [searchHistory, setSearchHistory] = React.useState([])
+	// State used for the modal
+	const [modal, setModal] = React.useState(false)
+
+	// Toggle modal state
+	const toggleModal = () => {
+		setModal(!modal)
+	}
 
 	// Update searchHistory array
 	const updateHistory = str => {
 		setSearchHistory([...searchHistory, str])
 	}
 
-	// Changing state on clicks
+	// Checking which button was clicked, and setting state
 	const clickHandler = (e) => {
 		switch(e.target.textContent){
 			case "Search History":
 				if(searchHistory.length > 0){
-						setSlideIn(!fadeIn)
+					setSlideIn(!fadeIn)
 					}
 				break
+			case 'X': 
+				setSlideIn(!fadeIn)
+				break
 			case "Search Date":
-				console.log(e.target.textContent)
+				toggleModal()
 				break
 			default: 
 				return null
@@ -34,34 +46,16 @@ function LeftPanel({ changeCenter }) {
 
 			<MapNav changeCenter={changeCenter} updateHistory={updateHistory}/>
 
-			<div className="lef-panel__menu">
+			<div className="left-panel__menu">
 				<button onClick={clickHandler}>Search History</button>
 				<button onClick={clickHandler}>Search Date</button>
 			</div>
 			 {/* Short circut used for rending to the UI */}
-			 {fadeIn && <DateMenu fadeIn={fadeIn} clickHandler={clickHandler} searchHistory={searchHistory}/>}
+			 {fadeIn && <HistoryMenu fadeIn={fadeIn} clickHandler={clickHandler} searchHistory={searchHistory}/>}
+			 {/* Short circut for the modal */}
+			 {modal && <SearchDateModal modal={modal} toggleModal={toggleModal}/>}
 		</div>
 	)
 }
 
 export default LeftPanel;
-
-const DateMenu = (props) => {
-	
-	// Used to assing a className to the div below
-	let fadeIn = props.fadeIn ? 'fadeIn': "";
-
-	return (
-		<div className={`history-menu ${fadeIn}`}>
-			<div className="history-menu__list-container">
-				<ul className="history-menu__list">
-					{props.searchHistory.map( item => {
-							return <li className="history-menu__item">{item.address}</li>
-						})
-					}
-				</ul>
-			</div>
-			<button onClick={props.clickHandler}>X</button>
-		</div>
-	)
-}

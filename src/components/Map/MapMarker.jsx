@@ -7,10 +7,7 @@ const MapMarker = props => {
 	const [modal, setModal] = React.useState(false)
 
 	const toggleModal = () => {
-		console.log(modal)
 		setModal(!modal)
-		// console.log(modal)
-
 	}
 
   return (
