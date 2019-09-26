@@ -15,7 +15,7 @@ function MapNav({changeCenter, updateHistory}) {
 		e.preventDefault();
 		if(address.address !== "") {
 			updateHistory(address)
-			Geocode.setApiKey("AIzaSyCCdxVw0N2ydpKJ_yOm3VQgQzpq4rtSgBE");
+			Geocode.setApiKey(`${process.env.REACT_APP_API_KEY}`);
 			Geocode.setLanguage("en");
 			const coords = await Geocode.fromAddress(address.address)
 			// Send this to axios with auth POST req and send that data back up to the Map Component.
