@@ -4,6 +4,7 @@ import "../../../index.scss";
 import "./footer.scss";
 import logo from "./assets/Group.svg";
 import { Link } from "react-router-dom";
+import { FaFacebook, FaGithub, FaTwitter } from "react-icons/fa";
 
 const Footer = () => {
   return (
@@ -18,14 +19,17 @@ const Footer = () => {
               <Link className="footer-link">GitHub</Link>
             </nav>
             <nav className="right-nav">
-              <Link className="footer-link">Login</Link>
-              <Link className="footer-link">Sign Up</Link>
+              <Link to="/login" className="footer-link">
+                Login
+              </Link>
+              <Link to="/register" className="footer-link">
+                Sign Up
+              </Link>
               <Link className="footer-link">Updates</Link>
               <Link className="footer-link">Blog</Link>
               <Link className="footer-link">Mailing List</Link>
             </nav>
           </div>
-          {/* <img src={bus} /> */}
           <div className="footer-hero">
             <div className="logo-container">
               <img src={logo} />
@@ -40,9 +44,15 @@ const Footer = () => {
               </p>
             </div>
             <div className="footer-links-container">
-              <i>a</i>
-              <i>b</i>
-              <i>c</i>
+              <a href="#">
+                <FaFacebook />
+              </a>
+              <a href="#">
+                <FaGithub />
+              </a>
+              <a href="#">
+                <FaTwitter />
+              </a>
             </div>
           </div>
         </div>
