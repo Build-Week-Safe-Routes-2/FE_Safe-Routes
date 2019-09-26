@@ -32,11 +32,7 @@ function MapNav({changeCenter, updateHistory}) {
 			const payload = coords.results[0].geometry.location
 			axios.post("http://saferoads.herokuapp.com/api", payload)
 			.then(res => {
-				console.log(res.data.data)
-				const markers = res.data.data
-				const filteredMarkers = markers.map(marker => {
-					
-				})
+				console.log("DATA FROM .THEN", res.data.data)
 				setMapMarkers(res.data.data)
 			})
 			.catch(err => console.log(err))

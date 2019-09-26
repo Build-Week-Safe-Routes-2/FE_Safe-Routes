@@ -8,18 +8,11 @@ import { darkMode, lightMode } from "./mapStyles";
 import { MapMarkers } from '../../context/MapMarkerContext';
 
 const Map = props => {
-  // Dummy data variable
-  const dummyData = [
-    { name: "Danger", lat: 30.1571, lng: -97.7831 },
-    { name: "Zone", lat: 30.1621, lng: -97.7771 }
-	];
-	
 	// Connecting to context
 	const {mapMarkers} = React.useContext(MapMarkers)
 	console.log("CONTEXT IN MAP COMPONENT", mapMarkers)
 
   // State initializations
-  const [data, setData] = useState({ data: dummyData, zoom: 11 });
   const [mapStyles, setMapStyles] = useState(lightMode);
 
 	const getDate = new Date();
@@ -28,7 +21,7 @@ const Map = props => {
     if (myDate >= 18) {
       setMapStyles(darkMode);
     }
-  }, [myDate, mapMarkers]);
+	}, [myDate]);
 
 	if(mapMarkers.length < 1){
 		return (
@@ -41,7 +34,7 @@ const Map = props => {
 				<GoogleMapReact
 					bootstrapURLKeys={{ key: `${process.env.REACT_APP_API_KEY}` }}
 					center={props.centerMap}
-					defaultZoom={data.zoom}
+					defaultZoom={11}
 					options={mapStyles}
 				>
 					{/* Display marker data here
@@ -70,7 +63,7 @@ const Map = props => {
       <GoogleMapReact
         bootstrapURLKeys={{ key: `${process.env.REACT_APP_API_KEY}` }}
         center={props.centerMap}
-        defaultZoom={data.zoom}
+        defaultZoom={11}
         options={mapStyles}
       >
         {/* Display marker data here */}
@@ -78,7 +71,9 @@ const Map = props => {
           return (
             <MapMarker
               key={index}
-              marker={marker}
+							marker={marker}
+							lat={marker.latitude}
+							lng={marker.longitude}
             />
           );
         })}
