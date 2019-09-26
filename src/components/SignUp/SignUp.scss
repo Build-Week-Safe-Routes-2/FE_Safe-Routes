@@ -1,0 +1,51 @@
+$header-blue: #4f79a4;
+@import url("https://fonts.googleapis.com/css?family=Cabin:400,400i|Khula:400,600,700&display=swap");
+
+.signin-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  #register-text {
+    font-family: Khula, sans-serif;
+  }
+
+  .signin-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .field {
+    border: none;
+    height: 40px;
+    margin-top: 5%;
+    border-radius: 10px;
+    padding-left: 15px;
+    font-size: 1.6rem;
+    color: $header-blue;
+  }
+
+  .terms-container {
+    margin-top: 5px;
+    margin-left: 5px;
+    display: flex;
+    width: 50%;
+
+    .field-checkbox {
+      margin: 5px;
+    }
+  }
+
+  small {
+    color: white;
+    font-size: 1.1rem;
+
+    a {
+      color: white;
+      text-decoration: underline;
+      font-size: 1.1rem;
+    }
+  }
+}

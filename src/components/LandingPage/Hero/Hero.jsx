@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import "../../reset.scss";
 import "../../../index.scss";
 import "./HeroStyle.scss";
-import "./hero.scss";
 import Rectangle from "./images/Rectangle.png";
 import lightRec from "./images/Rectangle (1).png";
 import bottomRec from "./images/Vector.png";
@@ -27,7 +26,7 @@ const Hero = props => {
             </h1>
           </div>
           <div className="navLinks">
-            <Link to="/register">Sign In</Link>
+            <Link to="/register">Register</Link>
             <Link to="/login">Login</Link>
           </div>
         </div>
