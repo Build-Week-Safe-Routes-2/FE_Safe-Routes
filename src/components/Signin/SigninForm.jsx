@@ -9,24 +9,44 @@ import rec2 from './images/rec2.png'
 import rec3 from './images/rec3.png'
 
 
-const SigninForm =({errors,touched})=> {
+const SigninForm =({values,errors,touched})=> {
 
 
     return (
-    <div> 
-        
-        <Form className="formWrap">
-            <Field type="email" name="email" placeholder="Email" className="emailInput"/>
-            {touched.email && errors.email &&<p>{errors.email}</p>}
-            <Field type="password" name="password" placeholder="Password"className="passwordInput" />
-            {touched.password && errors.password && <p>{errors.password}</p>}
-            <div className="buttonContainer">       
-                <button type="submit" className="loginButton">Login</button>
-                <button type="submit"className="signupButton">Sign Up</button>
-            </div>      
-
+        <div className="signin-container">
+        <h2 id="register-text">Login</h2>
+        <Form className="signin-form">
+          <Field
+            type="email"
+            name="email"
+            placeholder="Enter your Email"
+            className="field"
+          />
+          {touched.email && errors.email && <p>{errors.email}</p>}
+  
+          <Field
+            type="password"
+            name="password"
+            placeholder="Choose your password"
+            className="field"
+          />
+          {touched.password && errors.password && <p>{errors.password}</p>}
+  
+          <label htmlFor="terms" className="terms-container">
+            <small>
+              Please accept our <a href="#">Terms and conditions</a>
+            </small>
+            <Field
+              type="checkbox"
+              name="terms"
+              checked={values.terms}
+              required
+              className="field-checkbox"
+            />
+          </label>
+          <button type="submit">Submit</button>
         </Form>
-    </div>
+      </div>
     )
 }
 
