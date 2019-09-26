@@ -13,7 +13,7 @@ const Hero = props => {
     <div>
       <div className="waveBack">
         <img src={Rectangle} alt="" className="back" />
-        <img src={lightRec} alt="" className="back" />
+        <img src={lightRec} alt="" className="backMiddle" />
         <img src={bottomRec} alt="" className="backBottom" />
       </div>
       <div className="mainContainer">
