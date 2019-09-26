@@ -8,6 +8,7 @@ import Rectangle from './images/Rectangle.png';
 import lightRec from './images/Rectangle (1).png'
 import bottomRec from './images/Vector.png'
 
+
 const Hero = (props) => {
   return (
  <div>
