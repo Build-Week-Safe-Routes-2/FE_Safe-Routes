@@ -10,7 +10,7 @@ const InputWrap = styled.div `
     display: flex;
     justify-content:center;
     flex-direction:column;
-    background-color:#1C4A5F;
+    background-color:#4f79a4;
     height:750px ;
     margin:2% 22% 5%;  
     border-radius:10px;
@@ -26,10 +26,8 @@ const Signin =({errors,touched})=> {
     <InputWrap> 
         <h2 className="signTitle">Login</h2>
         <Form>
-            {/* <h2>User</h2> */}
-            <Field type="email" name="username" placeholder="Email" className="emailInput"/>
-            {touched.username && errors.username &&<p>{errors.username}</p>}
-            {/* <h2>Password</h2> */}
+            <Field type="email" name="email" placeholder="Email" className="emailInput"/>
+            {touched.email && errors.email &&<p>{errors.email}</p>}
             <Field type="password" name="password" placeholder="Password"className="passwordInput" />
             {touched.password && errors.password && <p>{errors.password}</p>}
             <div className="buttonContainer">       
@@ -45,13 +43,13 @@ const Signin =({errors,touched})=> {
 const FormikSignin = withFormik({
     mapPropsToValues({email,password}) {
         return {
-            username: email || '',
+            email: email || '',
             password: password || '',
         }
     },
 
     validationSchema: Yup.object().shape({
-        username: Yup.string()
+        email: Yup.string()
         .email("Please enter a valid email address")
         .required("You must enter an email address."),
       password: Yup.string()
@@ -68,6 +66,7 @@ const FormikSignin = withFormik({
 			axiosWithAuth()
 				.post('/auth/login', values)
 				.then(res => {
+						console.log(values)
 						console.log(res)
 				})
 				.catch(err => console.log('You have an ERROR', err.response))

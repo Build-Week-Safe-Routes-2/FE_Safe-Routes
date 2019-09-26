@@ -28,7 +28,7 @@ const MapMarker = props => {
 						</ul>
           </ModalBody>
           <ModalFooter>
-            <Button color="secondary" onClick={toggleModal}>Close</Button>
+            <Button color="danger" onClick={toggleModal}>Close</Button>
           </ModalFooter>
         </Modal>
     </div>
