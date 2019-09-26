@@ -1,0 +1,10 @@
+
+.dash-container {
+	display: flex;
+
+	.left-panel, .right-panel{
+		width: 25%;
+		background-color: #1F304C;
+		color: white;
+	}
+}
