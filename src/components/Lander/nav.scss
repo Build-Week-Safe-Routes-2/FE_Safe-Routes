@@ -1,0 +1,43 @@
+.navBar{
+    background-color:#0e1113;
+    color: #fff;
+    text-decoration: none;
+    margin: 2% 0;
+    border:none;
+    padding:2% 0;
+
+       
+    
+
+     a{
+         color:#fff;
+         text-decoration: none;
+         padding:0 6%;
+         margin: 0 2%;
+         border:none;
+
+        &:focus{
+            outline:none;
+        }
+        &:hover{
+            outline:none;
+            border:none;
+        }
+        &:active{
+            outline:none;
+            border:none;
+        }
+     }
+    
+}
+
+.links{
+    &:focus{
+        outline:none;
+    }
+}
+
+// .PrivateTabIndicator{
+//     color:red;
+//     height:20px;
+// }
