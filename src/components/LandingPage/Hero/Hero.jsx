@@ -3,7 +3,7 @@ import "../../reset.scss";
 import "../../../index.scss";
 import "./HeroStyle.scss";
 import "./hero.scss";
-import pin from "./images/undraw_directions_x53j (2).svg";
+import pin from "./images/car.svg";
 import Rectangle from "./images/Rectangle.png";
 import lightRec from "./images/Rectangle (1).png";
 import bottomRec from "./images/Vector.png";

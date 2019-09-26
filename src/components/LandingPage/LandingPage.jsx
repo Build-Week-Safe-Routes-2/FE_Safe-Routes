@@ -1,7 +1,7 @@
 import React from "react";
 import Hero from "./Hero/Hero";
 import Footer from "./Footer/Footer";
-import Body from "./Footer/Body/Body";
+import Body from "./Body/Body";
 
 const LandingPage = () => {
   return (
