@@ -1,5 +1,4 @@
 import React from "react";
-import MapNav from "../MapNav/MapNav";
 import Map from "./Map";
 import LeftPanel from '../Panels/LeftPanel';
 import RightPanel from '../Panels/RightPanel';
@@ -13,7 +12,7 @@ import { MapMarkers } from '../../context/MapMarkerContext'
 function MapView() {
 	const [center, setCenterMap] = React.useState({lat: 30.2672, lng: -97.7431})
 	// State to be passed by context
-	const [ mapMarkers, setMapMarkers] = React.useState()
+	const [ mapMarkers, setMapMarkers] = React.useState([])
 
 	const changeCenter = newCoords => {
 		setCenterMap(newCoords)

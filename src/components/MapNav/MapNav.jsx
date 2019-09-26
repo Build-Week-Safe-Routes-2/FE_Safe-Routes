@@ -7,9 +7,7 @@ import { MapMarkers } from '../../context/MapMarkerContext';
 
 function MapNav({changeCenter, updateHistory}) {
 	const [address, setAddress] = React.useState({ address: ""});
-	const {mapMarkers, setMapMarkers} = React.useContext(MapMarkers);
-
-	// console.log("THIS IS OUR CONTEXT", mapMarkers, setMapMarkers)
+	const {setMapMarkers} = React.useContext(MapMarkers);
 	
   const changeHandler = e => {
     // console.log(e.target.value);
@@ -19,19 +17,28 @@ function MapNav({changeCenter, updateHistory}) {
   const submitHandler = async e => {
 		e.preventDefault();
 		if(address.address !== "") {
+			// Add the user search to the history menu in the left panel
 			updateHistory(address);
+
+			// Get coordinates from a string
 			Geocode.setApiKey(`${process.env.REACT_APP_API_KEY}`);
 			Geocode.setLanguage("en");
 			const coords = await Geocode.fromAddress(address.address);
-			// Send this to axios with auth POST req and send that data back up to the Map Component.
-			console.log(coords.results[0].geometry.location);
+
 			// Change the center view of the map
 			changeCenter(coords.results[0].geometry.location);
-			// Hit DS API
-			setMapMarkers(coords.results[0].geometry.location);
+
+			// Hit DS API and create unique set of markers
 			const payload = coords.results[0].geometry.location
 			axios.post("http://saferoads.herokuapp.com/api", payload)
-			.then(res => console.log(res))
+			.then(res => {
+				console.log(res.data.data)
+				const markers = res.data.data
+				const filteredMarkers = markers.map(marker => {
+					
+				})
+				setMapMarkers(res.data.data)
+			})
 			.catch(err => console.log(err))
 			// Context Setter
 			setAddress({address: ""});
