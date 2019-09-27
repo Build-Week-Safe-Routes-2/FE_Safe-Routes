@@ -23,7 +23,7 @@ const Map = props => {
       setMapStyles(darkMode);
     }
 	}, [myDate]);
-	
+
 	useEffect(() => {
 		console.log("cleaned up")
 	},[])
@@ -37,7 +37,6 @@ const Map = props => {
 					height={100}
 					width={100}
 					timeout={30000} //30 secs
-
 				/>
 			</div>
      );
