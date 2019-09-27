@@ -21,6 +21,7 @@ const SigninForm =({values,errors,touched})=> {
             name="email"
             placeholder="Enter your Email"
             className="field"
+            
           />
           {touched.email && errors.email && <p>{errors.email}</p>}
   
