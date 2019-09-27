@@ -24,13 +24,12 @@ img.backBottom {
   width: 100%;
   top: 60vh;
 }
-.logo {
+
+.logo-hero-container {
   display: flex;
   width: 80%;
   margin-top: 1%;
-  .logoPin {
-    margin-right: 3%;
-  }
+  align-items: center;
 }
 
 .mainContainer {
