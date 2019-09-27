@@ -35,7 +35,7 @@ const SignHero = props => {
           </div>
           <div className="heroWrap">
             <div className="missionWrap">
-              <SignUp />
+              <SignUp props={props}/>
             </div>
             <div className="vectorContainer">
               <img src={Sign} alt="map"></img>
