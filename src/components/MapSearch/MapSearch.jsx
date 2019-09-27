@@ -34,7 +34,7 @@ function MapSearch({changeCenter, updateHistory}) {
 
 			// Hit DS API and create unique set of markers
 			const payload = coords.results[0].geometry.location
-			axios.post("http://saferoads.herokuapp.com/api", payload)
+			axios.post("https://saferoads.herokuapp.com/api", payload)
 			.then(res => {
 				console.log("DATA FROM .THEN", res.data.data)
 				setMapMarkers({markers:res.data.data, isLoading: false})
