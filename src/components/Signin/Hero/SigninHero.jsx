@@ -11,7 +11,7 @@ import "../../reset.scss";
 import "../../../index.scss";
 import "./HeroStyle.scss";
 
-const SigninHero = () => {
+const SigninHero = (props) => {
   return (
     <>
       <div>
@@ -35,7 +35,7 @@ const SigninHero = () => {
           </div>
           <div className="heroWrap">
             <div className="missionWrap">
-              <SigninForm />
+              <SigninForm props={props}/>
             </div>
             <div className="vectorContainer">
               <img src={signIn} alt="map"></img>

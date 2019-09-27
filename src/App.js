@@ -5,6 +5,7 @@ import { Route } from "react-router-dom";
 import LandingPage from "./components/LandingPage/LandingPage";
 import SigninHero from "./components/Signin/Hero/SigninHero";
 import SignHero from "./components/SignUp/SignHero/SignHero";
+import PrivateRoute from './components/PrivateRoute';
 
 function App() {
   return (
@@ -12,7 +13,7 @@ function App() {
       <Route exact path="/" component={LandingPage} />
       <Route path="/register" component={SignHero} />
       <Route path="/login" component={SigninHero} />
-      <Route path="/routes" component={Map} />
+      <PrivateRoute path="/routes" component={Map} />
     </div>
   );
 }

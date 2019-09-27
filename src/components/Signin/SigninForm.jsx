@@ -4,7 +4,8 @@ import { withFormik, Form, Field } from "formik";
 import "./SignIn.scss";
 import * as Yup from "yup";
 
-const SigninForm = ({ values, errors, touched }) => {
+const SigninForm = (props) => {
+	console.log("FROM SIGN IN FORM",props)
   return (
     <div className="signin-container">
       <h2 id="register-text">Login</h2>
@@ -15,7 +16,7 @@ const SigninForm = ({ values, errors, touched }) => {
           placeholder="Enter your Email"
           className="field"
         />
-        {touched.email && errors.email && <p>{errors.email}</p>}
+        {props.touched.email && props.errors.email && <p>{props.errors.email}</p>}
 
         <Field
           type="password"
@@ -23,7 +24,7 @@ const SigninForm = ({ values, errors, touched }) => {
           placeholder="Choose your password"
           className="field"
         />
-        {touched.password && errors.password && <p>{errors.password}</p>}
+        {props.touched.password && props.errors.password && <p>{props.errors.password}</p>}
 
         <button type="submit">Submit</button>
       </Form>
@@ -32,10 +33,10 @@ const SigninForm = ({ values, errors, touched }) => {
 };
 
 const FormikSignin = withFormik({
-  mapPropsToValues({ email, password }) {
+  mapPropsToValues(props) {
     return {
-      email: email || "",
-      password: password || ""
+      email: props.email || "",
+      password: props.password || ""
     };
   },
 
@@ -49,12 +50,14 @@ const FormikSignin = withFormik({
       .max(20, "Your password must be no more than 20 characters long")
   }),
 
-  handleSubmit(values) {
+  handleSubmit(values, {props}) {
     axiosWithAuth()
       .post("/auth/login", values)
       .then(res => {
         console.log(values);
-        console.log(res);
+				localStorage.setItem("token",res.data.data)
+				console.log("FROM HANDLE SUBMIT", props)
+				props.props.history.push("/routes")
       })
       .catch(err => console.log("You have an ERROR", err.response));
   }
