@@ -19,7 +19,7 @@ const Hero = props => {
       </div>
       <div className="mainContainer">
         <div className="navWrap">
-          <div className="logo">
+          <div className="logo-hero-container">
             <img src={Logo} alt="logo" className="logoPin" />
             <h1>
               <Link to="/">Safe Routes</Link>

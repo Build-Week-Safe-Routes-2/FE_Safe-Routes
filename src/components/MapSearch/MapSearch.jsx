@@ -1,11 +1,12 @@
 import React from "react";
 import Geocode from "react-geocode";
 import axios from "axios";
+import './MapSearch.scss'
 
 // Context
 import { MapMarkers } from '../../context/MapMarkerContext';
 
-function MapNav({changeCenter, updateHistory}) {
+function MapSearch({changeCenter, updateHistory}) {
 	const [address, setAddress] = React.useState({ address: ""});
 	const {mapMarkers, setMapMarkers} = React.useContext(MapMarkers);
 	
@@ -16,13 +17,15 @@ function MapNav({changeCenter, updateHistory}) {
 
   const submitHandler = async e => {
 		e.preventDefault();
-		setMapMarkers({...mapMarkers, isLoading: true})
 		if(address.address !== "") {
+			// Display loading screen to the user
+			setMapMarkers({...mapMarkers, isLoading: true})
+
 			// Add the user search to the history menu in the left panel
 			updateHistory(address);
 
 			// Get coordinates from a string
-			Geocode.setApiKey(`${process.env.REACT_APP_API_KEY}`);
+			Geocode.setApiKey(`AIzaSyCCdxVw0N2ydpKJ_yOm3VQgQzpq4rtSgBE`);
 			Geocode.setLanguage("en");
 			const coords = await Geocode.fromAddress(address.address);
 
@@ -43,19 +46,23 @@ function MapNav({changeCenter, updateHistory}) {
 	};
 	
   return (
-    <div>
-			<h4>Search a City OR <br/> a specific Address</h4>
-      <form onSubmit={submitHandler}>
-        <input
-          type="text"
-          name="address"
-          value={address.address}
-          onChange={changeHandler}
-        />
-        <button>Submit</button>
-      </form>
+    <div className="mapSearch__container" >
+			<h2 className="mapSearch__header">Search A City Or Address</h2>
+			<div className="mapSearch__form-container">
+				<form onSubmit={submitHandler} className="mapSearch__form">
+					<input
+						type="text"
+						name="address"
+						className="mapSearch__input"
+						placeholder="City / Address"
+						value={address.address}
+						onChange={changeHandler}
+					/>
+					<button className="mapSearch__button">Submit</button>
+				</form>
+			</div>
     </div>
   );
 }
 
-export default MapNav;
+export default MapSearch;

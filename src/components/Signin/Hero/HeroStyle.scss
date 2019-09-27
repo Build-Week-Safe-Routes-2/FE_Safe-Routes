@@ -24,13 +24,11 @@ img.backBottom {
   width: 100%;
   top: 60vh;
 }
-.logo{
-    display: flex;
-    width: 80%;
-    margin-top: 1%;
-    .logoPin{
-        margin-right: 3%;
-    }
+.logo-signin-container {
+  display: flex;
+  width: 80%;
+  margin-top: 1%;
+  align-items: center;
 }
 
 .mainContainer {
@@ -53,7 +51,6 @@ img.backBottom {
     width: 40%;
     display: flex;
     justify-content: flex-end;
-
   }
   a {
     text-decoration: none;
@@ -119,6 +116,6 @@ img.backBottom {
   }
 }
 
-.test{
-    margin-top:300px;
+.test {
+  margin-top: 300px;
 }

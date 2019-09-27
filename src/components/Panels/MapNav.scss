@@ -1,0 +1,71 @@
+@import url("https://fonts.googleapis.com/css?family=Cabin:400,400i|Khula:400,600,700&display=swap");
+
+.top-nav {
+  background: #1582e1;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px dashed rgba(0, 0, 0, 0.1);
+
+  h2 {
+    color: white;
+    // font-family: Khula, sans-serif;
+  }
+
+  .top-nav-links {
+    display: flex;
+    margin-left: 50px;
+    width: 30rem;
+
+    justify-content: space-between;
+
+    a {
+      font-size: 1.6rem;
+      color: white;
+      text-decoration: none;
+    }
+  }
+
+  .top-nav-logo-container {
+    display: flex;
+    width: 300px;
+    justify-content: space-evenly;
+
+    img {
+      height: 25px;
+    }
+  }
+}
+
+.sub-nav-container {
+  height: 45px;
+  background: #1582e1;
+  display: flex;
+
+  .left-nav {
+    min-width: 300px;
+    max-width: 300px;
+  }
+
+  .right-nav {
+    background: white;
+    color: #878787;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 50px;
+
+    #map_-overview {
+      align-items: center;
+
+      h3 {
+        font-size: 1.9rem;
+      }
+    }
+  }
+}
+
+.date-container {
+  font-size: 1.4rem;
+}
