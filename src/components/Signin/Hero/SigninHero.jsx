@@ -22,9 +22,11 @@ const SigninHero = () => {
         </div>
         <div className="mainContainer">
           <div className="navWrap">
-            <div className="logo">
+            <div className="logo-signin-container">
               <img src={Logo} alt="logo" className="logoPin" />
-              <h1>Safe Routes</h1>
+              <h1>
+                <Link to="/">Safe Routes</Link>
+              </h1>
             </div>
             <div className="navLinks">
               <Link to="/register">Register</Link>
