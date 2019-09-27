@@ -1,20 +1,59 @@
 .top-nav {
   background: red;
   height: 50px;
+  display: flex;
+  align-items: center;
+
+  .top-nav-links {
+    display: flex;
+    margin-left: 50px;
+    width: 30rem;
+    background: orange;
+    justify-content: space-between;
+
+    a {
+      font-size: 1.6rem;
+      color: white;
+      background: purple;
+    }
+  }
+
+  .top-nav-logo-container {
+    display: flex;
+    width: 300px;
+    justify-content: space-evenly;
+    background: purple;
+  }
 }
 
 .sub-nav-container {
   height: 45px;
-  background: yellow;
+  background: purple;
   display: flex;
 
   .left-nav {
-    min-width: 400px;
-    max-width: 400px;
+    min-width: 300px;
+    max-width: 300px;
   }
 
   .right-nav {
     background: blue;
     width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 50px;
+
+    .map-overview {
+      display: flex;
+      align-items: center;
+      background: purple;
+      width: 30rem;
+      height: 45px;
+
+      p {
+        font-size: 1.4rem;
+      }
+    }
   }
 }
