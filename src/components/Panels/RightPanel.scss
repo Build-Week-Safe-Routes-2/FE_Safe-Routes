@@ -1,3 +1,35 @@
 #\33 88f47bb-f236-46ae-bb4c-4c78f0e83371 > div > div > svg:nth-child(1) {
 	width: 1000px;
+	// background-color:red;
 }
+.doughnutContainer{
+	width:96%;
+	margin-left: 2%;
+}
+
+.rightPanelTitleWrap{
+	// border-bottom:1px solid grey;
+	border:1px solid grey;
+	height:18.5vh;
+	text-align: left;
+
+	h1, p{
+		margin: 2% 5%;
+		line-height: 1.8;
+	}
+}
+.rightPanelMiddleWrap{
+	border:1px solid grey;
+	height:18.5vh;
+	// margin-top:10px;
+	text-align: left;
+
+	 p{
+		margin: 2% 5%;
+		line-height: 1.8;
+	}
+	h1{
+		 margin:5%
+	}
+}
+

@@ -13,7 +13,21 @@ const Chart = () => {
 
   return (
     <div>
-      <Doughnut data={data} height={1000} />
+      <div className="doughnutContainer">
+        <Doughnut  data={data} height={400} />
+      </div>
+        <div className="rightPanelTitleWrap">
+           <h1>Title</h1>
+           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, voluptatibus.</p>
+        </div>
+        <div className="rightPanelMiddleWrap">
+           <h1>Replacement of roller</h1>
+           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, voluptatibus.</p>
+        </div>
+        <div className="rightPanelMiddleWrap">
+           <h1>Replacement of roller</h1>
+           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, voluptatibus.</p>
+        </div>
     </div>
   );
 };
