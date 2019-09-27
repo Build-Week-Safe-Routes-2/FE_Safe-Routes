@@ -66,7 +66,7 @@ const FormikSignUpForm = withFormik({
     //   "Your password sucks"
     // )
   }),
-  handleSubmit(values) {
+  handleSubmit(values, {props}) {
     console.log(values);
     console.log({ email: values.email, password: values.password });
     axiosWithAuth()
@@ -75,7 +75,9 @@ const FormikSignUpForm = withFormik({
         password: values.password
       })
       .then(res => {
-        console.log(res);
+				console.log(res);
+				localStorage.setItem("token",res.data.data);
+				props.props.history.push("/routes")
       })
       .catch(err => {
         console.error("error", err);
