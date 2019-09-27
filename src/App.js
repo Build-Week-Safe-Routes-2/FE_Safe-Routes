@@ -5,12 +5,10 @@ import { Route } from "react-router-dom";
 import LandingPage from "./components/LandingPage/LandingPage";
 import SigninHero from "./components/Signin/Hero/SigninHero";
 import SignHero from "./components/SignUp/SignHero/SignHero";
-import Chart from "./components/Chart";
 
 function App() {
   return (
     <div className="App">
-      {/* <Chart /> */}
       <Route exact path="/" component={LandingPage} />
       <Route path="/register" component={SignHero} />
       <Route path="/login" component={SigninHero} />

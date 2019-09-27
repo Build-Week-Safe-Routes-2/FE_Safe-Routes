@@ -16,8 +16,10 @@ function MapNav({changeCenter, updateHistory}) {
 
   const submitHandler = async e => {
 		e.preventDefault();
-		setMapMarkers({...mapMarkers, isLoading: true})
 		if(address.address !== "") {
+			// Display loading screen to the user
+			setMapMarkers({...mapMarkers, isLoading: true})
+
 			// Add the user search to the history menu in the left panel
 			updateHistory(address);
 
