@@ -1,21 +1,22 @@
-import React from 'react';
-import './MapNav.scss'
+import React from "react";
+import "./MapNav.scss";
 
 function MapNav() {
-	return (
-		<div className="map-nav__main-container">
-			<div className="map-nav__container">
-				<div className="main-nav">
-					<h1>Map Nav</h1>
-				</div>
-				<div className="sub-nav">
-					<h2>sub nav</h2>
-				</div>
-			</div>
-		</div>
-			
-	
-	)
-} 
+  return (
+    <>
+      <div className="top-nav">
+        <h1>Hello World</h1>
+      </div>
+      <div className="sub-nav-container">
+        <div className="left-nav">
+          <h1>Left</h1>
+        </div>
+        <div className="right-nav">
+          <h1>Right</h1>
+        </div>
+      </div>
+    </>
+  );
+}
 
 export default MapNav;
