@@ -13,10 +13,18 @@ const Footer = () => {
         <div className="footer-container">
           <div className="footer-nav-container">
             <nav className="left-nav">
-              <Link className="footer-link">About</Link>
-              <Link className="footer-link">Contact</Link>
-              <Link className="footer-link">FAQ</Link>
-              <Link className="footer-link">GitHub</Link>
+              <Link to="/" className="footer-link">
+                About
+              </Link>
+              <Link to="/" className="footer-link">
+                Contact
+              </Link>
+              <Link to="/" className="footer-link">
+                FAQ
+              </Link>
+              <Link to="/" className="footer-link">
+                GitHub
+              </Link>
             </nav>
             <nav className="right-nav">
               <Link to="/login" className="footer-link">
@@ -25,14 +33,20 @@ const Footer = () => {
               <Link to="/register" className="footer-link">
                 Sign Up
               </Link>
-              <Link className="footer-link">Updates</Link>
-              <Link className="footer-link">Blog</Link>
-              <Link className="footer-link">Mailing List</Link>
+              <Link to="/" className="footer-link">
+                Updates
+              </Link>
+              <Link to="/" className="footer-link">
+                Blog
+              </Link>
+              <Link to="/" className="footer-link">
+                Mailing List
+              </Link>
             </nav>
           </div>
           <div className="footer-hero">
             <div className="logo-container">
-              <img src={logo} />
+              <img src={logo} alt="logo" />
               <h3>Safe Routes</h3>
             </div>
             <div className="story-container">
@@ -44,13 +58,13 @@ const Footer = () => {
               </p>
             </div>
             <div className="footer-links-container">
-              <a href="#">
+              <a href="https://www.facebook.com">
                 <FaFacebook />
               </a>
-              <a href="#">
+              <a href="http://github.com">
                 <FaGithub />
               </a>
-              <a href="#">
+              <a href="http://twiter.com">
                 <FaTwitter />
               </a>
             </div>

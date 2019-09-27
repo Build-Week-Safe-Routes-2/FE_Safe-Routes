@@ -22,7 +22,7 @@ const SignHero = props => {
         </div>
         <div className="mainContainer">
           <div className="navWrap">
-            <div className="logo">
+            <div className="logo-signup-container">
               <img src={Logo} alt="logo" className="logoPin" />
               <h1>
                 <Link to="/">Safe Routes</Link>
