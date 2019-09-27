@@ -12,7 +12,7 @@ import { MapMarkers } from '../../context/MapMarkerContext'
 function MapView() {
 	const [center, setCenterMap] = React.useState({lat: 30.2672, lng: -97.7431})
 	// State to be passed by context
-	const [ mapMarkers, setMapMarkers] = React.useState({markers: [], isLoading: false, graphData:[]})
+	const [ mapMarkers, setMapMarkers] = React.useState({markers: [], isLoading: false})
 
 	const changeCenter = newCoords => {
 		setCenterMap(newCoords)

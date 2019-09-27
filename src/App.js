@@ -1,5 +1,5 @@
 import React from "react";
-import "./App.scss";
+import './App.scss'
 
 // import SignUpForm from "./components/SignUp/SignUp";
 // import SigninForm from "./components/Signin/SigninForm";
@@ -13,18 +13,10 @@ import Chart from "./components/Chart";
 function App() {
   return (
     <div className="App">
-      <Chart />
-      {/* <SignHero /> */}
-      {/* <h1>Safe Routes</h1> */}
-      {/* <CenteredTabs /> */}
       {/* <Route exact path="/" component={LandingPage} /> */}
       {/* <Route path="/register" component={SignHero} /> */}
       {/* <Route path="/login" component={SigninHero} /> */}
-      {/* <Route path="/routes" component={Map} /> */}
-      {/* <Map /> */}
-      {/* <Nav /> */}
-      {/* <SigninForm /> */}
-      {/* <SignUpForm /> */}
+      <Route path="/routes" component={Map} />
     </div>
   );
 }

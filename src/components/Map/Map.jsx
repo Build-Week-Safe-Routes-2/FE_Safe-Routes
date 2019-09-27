@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import GoogleMapReact from "google-map-react";
 import Loader from 'react-loader-spinner'
 import MapMarker from "./MapMarker";
+
 // Custom Map styles
 import { darkMode, lightMode } from "./mapStyles";
 
@@ -11,7 +12,6 @@ import { MapMarkers } from '../../context/MapMarkerContext';
 const Map = props => {
 	// Connecting to context
 	const {mapMarkers} = React.useContext(MapMarkers)
-	console.log("CONTEXT IN MAP COMPONENT", mapMarkers)
 
   // State initializations
   const [mapStyles, setMapStyles] = useState(lightMode);
@@ -23,6 +23,10 @@ const Map = props => {
       setMapStyles(darkMode);
     }
 	}, [myDate]);
+	
+	useEffect(() => {
+		console.log("cleaned up")
+	},[])
 
 	if(mapMarkers.isLoading){
 		return(
