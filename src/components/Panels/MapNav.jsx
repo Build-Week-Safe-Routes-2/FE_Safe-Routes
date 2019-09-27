@@ -1,6 +1,7 @@
 import React from "react";
 import "./MapNav.scss";
 import { Link } from "react-router-dom";
+import Logo from "../LandingPage/Body/img/Group.svg";
 
 const date = new Date();
 function MapNav() {
@@ -8,7 +9,7 @@ function MapNav() {
     <>
       <div className="top-nav">
         <div className="top-nav-logo-container">
-          <img src="#" alt="logo" />
+          <img src={Logo} alt="logo" />
           <h2>Safe Routes</h2>
         </div>
         <nav className="top-nav-links">
@@ -24,13 +25,10 @@ function MapNav() {
         </nav>
       </div>
       <div className="sub-nav-container">
-        <div className="left-nav">
-          <h1>Left</h1>
-        </div>
+        <div className="left-nav"></div>
         <div className="right-nav">
-          <div className="map-overview">
-            <h3>Map Overview</h3>
-            <p>Number of crashes here</p>
+          <div id="map_-overview">
+            <h3>Map Overview | Number of crashes</h3>
           </div>
           <div className="date-container">{date.toString()}</div>
         </div>
