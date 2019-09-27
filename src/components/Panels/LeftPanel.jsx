@@ -1,5 +1,5 @@
 import React from 'react'
-import MapNav from '../MapNav/MapNav';
+import MapSearch from '../MapSearch/MapSearch';
 import HistoryMenu from './HistoryMenu';
 import SearchDateModal from './SearchDateModal';
 import './LeftPanel.scss'
@@ -44,7 +44,7 @@ function LeftPanel({ changeCenter }) {
 	return(
 		<div className="left-panel">
 
-			<MapNav changeCenter={changeCenter} updateHistory={updateHistory}/>
+			<MapSearch changeCenter={changeCenter} updateHistory={updateHistory}/>
 
 			<div className="left-panel__menu">
 				<button onClick={clickHandler}>Search History</button>
