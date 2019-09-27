@@ -46,7 +46,7 @@ function MapNav({changeCenter, updateHistory}) {
 	
   return (
     <div>
-			<h4>Search a City OR <br/> a specific Address</h4>
+			<h2>Search a City OR <br/> a specific Address</h2>
       <form onSubmit={submitHandler}>
         <input
           type="text"
