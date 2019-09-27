@@ -7,8 +7,9 @@ function RightPanel() {
 	const {mapMarkers} = React.useContext(MapMarkers)
 	return(
 		<div className="right-panel">
-			<h1>Top 100 US Accident Cities From 2015 - 2017</h1>
-			{mapMarkers.isLoading === false &&<Chart style={{display: "block"}}/>}
+			{/* <h1>Top 100 US Accident Cities From 2015 - 2017</h1> */}
+			<h2>Chance Of An Accident In This Area</h2>
+			{mapMarkers.isLoading === false && <Chart style={{display: "block"}}/>}
 		</div>
 	)
 }
