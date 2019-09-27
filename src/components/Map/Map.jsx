@@ -46,7 +46,7 @@ const Map = props => {
 				<GoogleMapReact
 					bootstrapURLKeys={{ key: `${process.env.REACT_APP_API_KEY}` }}
 					center={props.centerMap}
-					defaultZoom={11}
+					defaultZoom={mapMarkers.zoom}
 					options={mapStyles}
 				>
 				
@@ -65,7 +65,7 @@ const Map = props => {
       <GoogleMapReact
         bootstrapURLKeys={{ key: `${process.env.REACT_APP_API_KEY}` }}
         center={props.centerMap}
-        defaultZoom={11}
+        zoom={15}
         options={mapStyles}
       >
         {/* Display marker data here */}

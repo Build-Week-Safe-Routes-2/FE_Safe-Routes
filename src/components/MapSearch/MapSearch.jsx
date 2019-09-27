@@ -5,7 +5,7 @@ import axios from "axios";
 // Context
 import { MapMarkers } from '../../context/MapMarkerContext';
 
-function MapNav({changeCenter, updateHistory}) {
+function MapSearch({changeCenter, updateHistory}) {
 	const [address, setAddress] = React.useState({ address: ""});
 	const {mapMarkers, setMapMarkers} = React.useContext(MapMarkers);
 	
@@ -60,4 +60,4 @@ function MapNav({changeCenter, updateHistory}) {
   );
 }
 
-export default MapNav;
+export default MapSearch;
