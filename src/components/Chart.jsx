@@ -7,8 +7,9 @@ const Chart = () => {
 	const {mapMarkers} = React.useContext(MapMarkers);
 	const crashData = reduceData(mapMarkers.markers);
   const [data] = React.useState({
-    datasets: [{data: crashData, backgroundColor: ["#ff6384", "#ffce56"]}],
-    labels: ["Low", "Moderate To High"]
+    datasets: [{data: crashData, backgroundColor: ["#00E2DE", "#ff9181"]}],
+    cutoutPercentage: 75,
+    labels: ["Low", "Moderate"]
 	});
 
   return (
@@ -24,10 +25,7 @@ const Chart = () => {
            <h1>Replacement of roller</h1>
            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, voluptatibus.</p>
         </div>
-        <div className="rightPanelMiddleWrap">
-           <h1>Replacement of roller</h1>
-           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, voluptatibus.</p>
-        </div>
+        
     </div>
   );
 };
