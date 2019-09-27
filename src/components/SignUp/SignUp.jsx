@@ -27,7 +27,8 @@ const SignUpForm = ({ values, touched, errors }) => {
 
         <label htmlFor="terms" className="terms-container">
           <small>
-            Please accept our <a href="#">Terms and conditions</a>
+            Please accept our{" "}
+            <a href="https://www.google.com">Terms and conditions</a>
           </small>
           <Field
             type="checkbox"
