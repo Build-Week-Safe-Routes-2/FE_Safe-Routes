@@ -47,8 +47,10 @@ function LeftPanel({ changeCenter }) {
 			<MapSearch changeCenter={changeCenter} updateHistory={updateHistory}/>
 
 			<div className="left-panel__menu">
-				<button onClick={clickHandler}>Search History</button>
-				<button onClick={clickHandler}>Search Date</button>
+				<div className="left-panel__button-container">
+					<button onClick={clickHandler} className="searchHistory__button">Search History</button>
+				<button onClick={clickHandler} className="searchDate__button">Search Date</button>
+				</div>
 			</div>
 			 {/* Short circut used for rending history menu to the UI */}
 			 {fadeIn && <HistoryMenu fadeIn={fadeIn} clickHandler={clickHandler} searchHistory={searchHistory}/>}

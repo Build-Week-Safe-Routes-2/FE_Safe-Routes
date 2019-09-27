@@ -1,0 +1,42 @@
+
+$header-blue: #4f79a4;
+@import url("https://fonts.googleapis.com/css?family=Cabin:400,400i|Khula:400,600,700&display=swap");
+
+.mapSearch__container {
+	// background-color: red;
+	margin-top: 1rem;
+	
+	.mapSearch__form-container {
+		// border: 2px solid red;
+		padding: 10px;
+		display: flex;
+		justify-content: center;
+		.mapSearch__form {
+			// border: 2px solid green;
+			display: flex;
+			justify-content: space-between;
+			font-size: 1.5rem;
+			width: 100%;
+			
+			.mapSearch__input {
+				border-radius: 5px;
+				border: none;
+				text-align: center;
+			}
+
+			.mapSearch__button{
+				width: 90px;
+				height: 30px;
+				color: $header-blue;
+				background-color: white;
+				font-family: "Cabin";
+				border: none;
+				border-radius: 5px;
+				font-size: 1.5rem;
+				font-weight: bold;
+				letter-spacing: 1.2px;
+			}
+		}
+	}
+	
+}

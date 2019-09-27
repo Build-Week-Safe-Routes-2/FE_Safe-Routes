@@ -1,6 +1,7 @@
 import React from "react";
 import Geocode from "react-geocode";
 import axios from "axios";
+import './MapSearch.scss'
 
 // Context
 import { MapMarkers } from '../../context/MapMarkerContext';
@@ -45,17 +46,21 @@ function MapSearch({changeCenter, updateHistory}) {
 	};
 	
   return (
-    <div>
-			<h2>Search a City OR <br/> a specific Address</h2>
-      <form onSubmit={submitHandler}>
-        <input
-          type="text"
-          name="address"
-          value={address.address}
-          onChange={changeHandler}
-        />
-        <button>Submit</button>
-      </form>
+    <div className="mapSearch__container" >
+			<h2 className="mapSearch__header">Search A City Or Address</h2>
+			<div className="mapSearch__form-container">
+				<form onSubmit={submitHandler} className="mapSearch__form">
+					<input
+						type="text"
+						name="address"
+						className="mapSearch__input"
+						placeholder="City / Address"
+						value={address.address}
+						onChange={changeHandler}
+					/>
+					<button className="mapSearch__button">Submit</button>
+				</form>
+			</div>
     </div>
   );
 }
