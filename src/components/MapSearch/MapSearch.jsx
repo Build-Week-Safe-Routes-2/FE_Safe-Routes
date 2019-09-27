@@ -25,7 +25,7 @@ function MapSearch({changeCenter, updateHistory}) {
 			updateHistory(address);
 
 			// Get coordinates from a string
-			Geocode.setApiKey(`${process.env.REACT_APP_API_KEY}`);
+			Geocode.setApiKey(`AIzaSyCCdxVw0N2ydpKJ_yOm3VQgQzpq4rtSgBE`);
 			Geocode.setLanguage("en");
 			const coords = await Geocode.fromAddress(address.address);
 
