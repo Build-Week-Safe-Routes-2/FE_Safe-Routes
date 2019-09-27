@@ -7,7 +7,7 @@ import { MapMarkers } from '../../context/MapMarkerContext';
 
 function MapNav({changeCenter, updateHistory}) {
 	const [address, setAddress] = React.useState({ address: ""});
-	const {setMapMarkers} = React.useContext(MapMarkers);
+	const {mapMarkers, setMapMarkers} = React.useContext(MapMarkers);
 	
   const changeHandler = e => {
     // console.log(e.target.value);
@@ -16,6 +16,7 @@ function MapNav({changeCenter, updateHistory}) {
 
   const submitHandler = async e => {
 		e.preventDefault();
+		setMapMarkers({...mapMarkers, isLoading: true})
 		if(address.address !== "") {
 			// Add the user search to the history menu in the left panel
 			updateHistory(address);
@@ -33,7 +34,7 @@ function MapNav({changeCenter, updateHistory}) {
 			axios.post("http://saferoads.herokuapp.com/api", payload)
 			.then(res => {
 				console.log("DATA FROM .THEN", res.data.data)
-				setMapMarkers(res.data.data)
+				setMapMarkers({markers:res.data.data, isLoading: false})
 			})
 			.catch(err => console.log(err))
 			// Context Setter
