@@ -19,7 +19,7 @@ function MapNav() {
           <Link to="/routes" className="link-item-top">
             Map
           </Link>
-          <a href="#" className="link-item-top">
+          <a href="https://saferoute-visual.herokuapp.com/" target="_blank"className="link-item-top">
             Crash Statistics
           </a>
         </nav>
