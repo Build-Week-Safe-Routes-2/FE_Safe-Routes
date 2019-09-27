@@ -1,0 +1,100 @@
+@import "../variables.scss";
+@import url("https://fonts.googleapis.com/css?family=Cabin:400,400i|Khula:400,600,700&display=swap");
+
+.footer-wrapper {
+  width: 60%;
+  margin: 0 auto;
+}
+.footer-container {
+  display: flex;
+  flex-direction: row-reverse;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10%;
+
+  .footer-nav-container {
+    margin-top: 4%;
+    margin-left: 5%;
+    display: flex;
+    width: 25%;
+    text-align: left;
+    justify-content: space-evenly;
+    align-items: space-between;
+
+    .left-nav {
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+
+      .footer-link {
+        margin-top: 5px;
+        color: $light-grey;
+        font-size: 1.4rem;
+      }
+    }
+
+    .right-nav {
+      display: flex;
+      flex-direction: column;
+
+      .footer-link {
+        color: $light-grey;
+        margin-top: 5px;
+        font-size: 1.4rem;
+      }
+    }
+  }
+
+  .footer-hero {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+
+      img {
+        width: 30px;
+      }
+
+      h3 {
+        font-size: 1.8rem;
+        color: #727a9c;
+        font-weight: 500;
+        margin-left: 5px;
+        font-family: Khula, sans-serif;
+      }
+    }
+
+    .story-container {
+      margin-top: 25px;
+      display: flex;
+
+      p {
+        font-family: Cabin, sans-serif;
+        color: $light-grey;
+        font-size: 1.5rem;
+        text-align: left;
+        font-weight: 400;
+      }
+    }
+
+    .footer-links-container {
+      width: 25%;
+      font-size: 2rem;
+      display: flex;
+      justify-content: space-between;
+      margin-top: 25px;
+
+      svg {
+        color: $light-grey;
+        opacity: 0.8;
+        font-size: 1.6rem;
+      }
+    }
+  }
+}

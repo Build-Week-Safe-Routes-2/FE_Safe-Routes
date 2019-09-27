@@ -1,0 +1,135 @@
+@import url("https://fonts.googleapis.com/css?family=Cabin:400,400i|Khula:400,600,700&display=swap");
+
+img.back {
+  position: absolute;
+  display: flex;
+  z-index: -1;
+  width: 100%;
+  height: 85vh;
+  margin-right: 500%;
+}
+img.backMiddle {
+  position: absolute;
+  display: flex;
+  z-index: -2;
+  width: 100%;
+  height: 85vh;
+  margin-right: 500%;
+}
+
+img.backBottom {
+  position: absolute;
+  display: flex;
+  z-index: -3;
+  width: 100%;
+  top: 60vh;
+}
+.logo {
+  display: flex;
+  width: 100%;
+  margin-top: 1%;
+  // color:red;
+  .logoPin {
+    margin-right: 3%;
+  }
+  
+}
+
+.mainContainer {
+  width: 60%;
+  margin: 0 auto;
+}
+
+.navWrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3% 0;
+
+  h1  {
+    color: #fff;
+    font-family: Khula, sans-serif;
+    font-size: 2.2rem;
+    text-decoration: none;
+    width:30%;
+  }
+
+  .navLinks {
+    width: 45%;
+    display: flex;
+    justify-content: flex-end;
+  }
+  .navLinks a {
+    text-decoration: none;
+    font-size: 1.8rem;
+    color: #fff;
+    margin: 0 5%;
+  }
+}
+
+.heroWrap {
+  margin-top: 5%;
+  display: flex;
+  width: 100%;
+  height: 400px;
+  justify-content: space-between;
+  align-items: center;
+
+  .missionWrap {
+    display: flex;
+    flex-direction: column;
+    width: 45%;
+    text-align: left;
+    margin-top: 10%;
+
+    h2 {
+      color: #fff;
+      font-size: 4.2rem;
+      margin-bottom: 2%;
+      font-weight: 700;
+      font-family: Khula, sans-serif;
+    }
+    p {
+      font-size: 1.8rem;
+      line-height: 1.7;
+      color: #fff;
+      font-family: Cabin, sans-serif;
+    }
+    button {
+      background: white;
+      width: 150px;
+      min-width: 150px;
+      border-radius: 30px;
+      padding: 2%;
+      margin-top: 7%;
+      text-align: left;
+      border: none;
+      font-size: 1.5rem;
+      text-align: center;
+      color: #4f79a4;
+
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+  .vectorContainer {
+    width: 40%;
+    height: 100%;
+    padding: 2%;
+
+    img {
+      // transform: rotate(deg);
+      transform: scale(-1, 1);
+      height: 100%;
+    }
+  }
+}
+
+.test {
+  margin-top: 300px;
+}
+
+.space-hack {
+  margin-top: 500px;
+}

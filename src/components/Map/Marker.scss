@@ -1,0 +1,28 @@
+$pin-size: 20px;
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pin {
+  width: $pin-size;
+  height: $pin-size;
+  background-color: #70DDFF;
+  border-radius: 50% 50% 0;
+  transform: rotate(45deg);
+  
+  &::after {
+    content: '';
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    background-color: rgba(0, 0, 0, .1);
+    top: 25%;
+    left: 25%;
+    border-radius: 50%;
+  }
+}
