@@ -1,28 +1,62 @@
-.history-menu {
-  position: absolute;
-  top: 110px;
-  left: 290px;
-  background-color: #fafbfd;
-  color: #6a8295;
-  width: 20%;
-  margin: 0;
-  // animation: moveElement 3s normal forwards ease-in-out;
 
-  .history-menu__item {
-    &:nth-child(odd) {
-      background-color: #fafbfd;
-    }
-    &:nth-child(even) {
-      background-color: #ffffff;
-    }
-  }
+
+$header-blue: #4f79a4;
+@import url("https://fonts.googleapis.com/css?family=Cabin:400,400i|Khula:400,600,700&display=swap");
+
+.left-panel{
+	.left-panel__menu{
+		// border: 1px solid green;
+		display: flex;
+		justify-content: center;
+		.left-panel__button-container{
+			// border: 1px solid red;
+			width: 94%;
+			display: flex;
+			justify-content: space-between;
+			.searchHistory__button,
+			.searchDate__button {
+				padding: .5rem 1.2rem;
+				height: 30px;
+				color: $header-blue;
+				background-color: white;
+				font-family: "Cabin";
+				border: none;
+				border-radius: 5px;
+				font-size: 1.5rem;
+				font-weight: bold;
+				letter-spacing: 1.2px;
+			}
+		}
+		
+
+		.history-menu {
+			position: absolute;
+			top: 110px;
+			left: 290px;
+			background-color: #fafbfd;
+			color: #6a8295;
+			width: 20%;
+			margin: 0;
+		// animation: moveElement 3s normal forwards ease-in-out;
+			.history-menu__item {
+				&:nth-child(odd) {
+					background-color: #fafbfd;
+				}
+				&:nth-child(even) {
+					background-color: #ffffff;
+				}
+		}
+		}
+		.fadeIn {
+		display: flex;
+		flex-direction: column;
+		animation: moveElement 0.5s normal forwards ease-in-out;
+		}
+	}
+	
 }
 
-.fadeIn {
-  display: flex;
-  flex-direction: column;
-  animation: moveElement 0.5s normal forwards ease-in-out;
-}
+
 
 // .slideOut {
 // 	display: static;
