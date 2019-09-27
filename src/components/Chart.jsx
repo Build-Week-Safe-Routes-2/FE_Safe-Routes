@@ -13,7 +13,7 @@ const Chart = () => {
 
   return (
     <div>
-      <Doughnut data={data} height={1000} />
+      <Doughnut data={data} height={50} />
     </div>
   );
 };
