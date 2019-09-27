@@ -4,7 +4,7 @@ import LeftPanel from '../Panels/LeftPanel';
 import RightPanel from '../Panels/RightPanel';
 
 // Styles
-import './MapView.scss'
+import "../Panels/GlobalPanelStyles.scss"
 
 // Context
 import { MapMarkers } from '../../context/MapMarkerContext'
@@ -12,7 +12,7 @@ import { MapMarkers } from '../../context/MapMarkerContext'
 function MapView() {
 	const [center, setCenterMap] = React.useState({lat: 30.2672, lng: -97.7431})
 	// State to be passed by context
-	const [ mapMarkers, setMapMarkers] = React.useState([])
+	const [ mapMarkers, setMapMarkers] = React.useState({markers: [], isLoading: false, graphData:[]})
 
 	const changeCenter = newCoords => {
 		setCenterMap(newCoords)
