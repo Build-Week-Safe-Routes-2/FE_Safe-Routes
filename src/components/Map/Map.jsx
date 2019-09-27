@@ -54,7 +54,7 @@ const Map = props => {
       <div className="map-container-flex">
         <div style={{ height: "100vh", width: "100%" }}>
           <GoogleMapReact
-            bootstrapURLKeys={{ key: `${process.env.REACT_APP_API_KEY}` }}
+            bootstrapURLKeys={{ key: `AIzaSyCCdxVw0N2ydpKJ_yOm3VQgQzpq4rtSgBE` }}
             center={props.centerMap}
             defaultZoom={mapMarkers.zoom}
             options={mapStyles}

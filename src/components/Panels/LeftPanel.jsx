@@ -49,7 +49,7 @@ function LeftPanel({ changeCenter }) {
 			<div className="left-panel__menu">
 				<div className="left-panel__button-container">
 					<button onClick={clickHandler} className="searchHistory__button">Search History</button>
-				<button onClick={clickHandler} className="searchDate__button">Search Date</button>
+					<button onClick={clickHandler} className="searchDate__button">Search Date</button>
 				</div>
 			</div>
 			 {/* Short circut used for rending history menu to the UI */}
