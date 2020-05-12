@@ -1,43 +1,44 @@
-import React, { useState, useEffect } from "react";
-import GoogleMapReact from "google-map-react";
-import Loader from "react-loader-spinner";
-import MapMarker from "./MapMarker";
+import React, { useState, useEffect } from 'react'
+import GoogleMapReact from 'google-map-react'
+import Loader from 'react-loader-spinner'
+import MapMarker from './MapMarker'
 
 // Custom Map styles
-import { darkMode, lightMode } from "./mapStyles";
+import { darkMode, lightMode } from './mapStyles'
 
 // Context
-import { MapMarkers } from "../../context/MapMarkerContext";
+import { MapMarkers } from '../../context/MapMarkerContext'
 
 const Map = props => {
   // Connecting to context
-  const { mapMarkers } = React.useContext(MapMarkers);
+  const { mapMarkers } = React.useContext(MapMarkers)
 
   // State initializations
-  const [mapStyles, setMapStyles] = useState(lightMode);
+  const [mapStyles, setMapStyles] = useState(lightMode)
 
-  const getDate = new Date();
-  const myDate = getDate.getHours();
+  const getDate = new Date()
+  const myDate = getDate.getHours()
+
   useEffect(() => {
     if (myDate >= 18) {
-      setMapStyles(darkMode);
+      setMapStyles(darkMode)
     }
-  }, [myDate]);
+  }, [myDate])
 
   useEffect(() => {
-    console.log("cleaned up");
-  }, []);
+    console.log('cleaned up')
+  }, [])
 
   if (mapMarkers.isLoading) {
     return (
       <div
         style={{
-          height: "82.4vh",
-          width: "100%",
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          backgroundColor: "F4F4F4"
+          height: '82.4vh',
+          width: '100%',
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          backgroundColor: 'F4F4F4',
         }}
       >
         <Loader
@@ -48,32 +49,34 @@ const Map = props => {
           timeout={30000} //30 secs
         />
       </div>
-    );
+    )
   } else if (mapMarkers.markers.length < 1) {
     return (
       <div className="map-container-flex">
-        <div style={{ height: "100vh", width: "100%" }}>
+        <div style={{ height: '100vh', width: '100%' }}>
           <GoogleMapReact
-            bootstrapURLKeys={{ key: `AIzaSyCCdxVw0N2ydpKJ_yOm3VQgQzpq4rtSgBE` }}
+            bootstrapURLKeys={{
+              key: process.env.REACT_APP_MAPS_API,
+            }}
             center={props.centerMap}
             defaultZoom={mapMarkers.zoom}
             options={mapStyles}
           ></GoogleMapReact>
         </div>
       </div>
-    );
+    )
   }
 
   return (
     <div className="map-container-flex">
       <div
         style={{
-          height: "100vh",
-          width: "100%"
+          height: '100vh',
+          width: '100%',
         }}
       >
         <GoogleMapReact
-          bootstrapURLKeys={{ key: `${process.env.REACT_APP_API_KEY}` }}
+          bootstrapURLKeys={{ key: process.env.REACT_APP_MAPS_API }}
           center={props.centerMap}
           zoom={15}
           options={mapStyles}
@@ -87,12 +90,12 @@ const Map = props => {
                 lat={marker.latitude}
                 lng={marker.longitude}
               />
-            );
+            )
           })}
         </GoogleMapReact>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Map;
+export default Map

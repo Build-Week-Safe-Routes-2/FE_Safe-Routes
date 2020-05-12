@@ -1,4 +1,4 @@
-<h1 align="center">Safe Routes | <a href="https://uber.github.io/react-map-gl">Docs</a></h1>
+<h1 align="center">Safe Routes | <a href="#">Docs</a></h1>
 
 <h5 align="center">
 Build Week project for <a href="https://lambdaschool.com/">Lambda School</a>.

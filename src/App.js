@@ -1,11 +1,11 @@
-import React from "react";
-import "./App.scss";
-import Map from "./components/Map/MapView";
-import { Route } from "react-router-dom";
-import LandingPage from "./components/LandingPage/LandingPage";
-import SigninHero from "./components/Signin/Hero/SigninHero";
-import SignHero from "./components/SignUp/SignHero/SignHero";
-import PrivateRoute from './components/PrivateRoute';
+import React from 'react'
+import './App.scss'
+import Map from './components/Map/MapView'
+import { Route } from 'react-router-dom'
+import LandingPage from './components/LandingPage/LandingPage'
+import SigninHero from './components/Signin/Hero/SigninHero'
+import SignHero from './components/SignUp/SignHero/SignHero'
+import PrivateRoute from './components/PrivateRoute'
 
 function App() {
   return (
@@ -15,7 +15,7 @@ function App() {
       <Route path="/login" component={SigninHero} />
       <PrivateRoute path="/routes" component={Map} />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
